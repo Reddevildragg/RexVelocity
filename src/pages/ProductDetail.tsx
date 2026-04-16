@@ -133,7 +133,7 @@ export const ProductDetail = () => {
                 <Plus className="w-5 h-5" />
                 Add to Arsenal
               </button>
-              <div className="flex items-end gap-6 md:gap-8 w-full md:w-auto justify-center md:justify-start">
+              <div className="grid grid-cols-2 place-items-start place-content-center sm:flex sm:items-end gap-x-8 gap-y-6 md:gap-8 mx-auto sm:mx-0 w-max sm:w-auto mt-4 sm:mt-0">
                 {product.nutrition.map((item, i) => (
                   <div key={i} className="text-left">
                     <span className="block text-[10px] font-label uppercase tracking-widest text-on-surface-variant mb-1 whitespace-nowrap">{item.label}</span>
@@ -178,63 +178,65 @@ export const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Preparation Section */}
-      <section className="py-32">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="order-2 lg:order-1">
-              <h2 className="text-4xl md:text-6xl font-black font-headline italic uppercase mb-12 leading-none">How to <span className="text-primary">Deploy</span></h2>
-              <div className="space-y-10">
-                <div className="flex gap-6">
-                  <div className="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-black text-xl shrink-0 border border-outline-variant/20">01</div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2 flex items-center gap-2">
-                      <GlassWater className="w-5 h-5 text-primary" />
-                      Hydrate
-                    </h4>
-                    <p className="text-on-surface-variant">Fill your Rex Shaker with 400ml - 500ml of ice-cold water. The colder, the better.</p>
+      {/* Preparation Section (Only for Powders) */}
+      {product.type === 'powder' && (
+        <section className="py-32">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+              <div className="order-2 lg:order-1">
+                <h2 className="text-4xl md:text-6xl font-black font-headline italic uppercase mb-12 leading-none">How to <span className="text-primary">Deploy</span></h2>
+                <div className="space-y-10">
+                  <div className="flex gap-6">
+                    <div className="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-black text-xl shrink-0 border border-outline-variant/20">01</div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-2 flex items-center gap-2">
+                        <GlassWater className="w-5 h-5 text-primary" />
+                        Hydrate
+                      </h4>
+                      <p className="text-on-surface-variant">Fill your Rex Shaker with 400ml - 500ml of ice-cold water. The colder, the better.</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex gap-6">
-                  <div className="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-black text-xl shrink-0 border border-outline-variant/20">02</div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2 flex items-center gap-2">
-                      <Sparkles className="w-5 h-5 text-secondary" />
-                      Charge
-                    </h4>
-                    <p className="text-on-surface-variant">Add one level scoop of {product.name} powder. Watch the reaction begin.</p>
+                  <div className="flex gap-6">
+                    <div className="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-black text-xl shrink-0 border border-outline-variant/20">02</div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-2 flex items-center gap-2">
+                        <Sparkles className="w-5 h-5 text-secondary" />
+                        Charge
+                      </h4>
+                      <p className="text-on-surface-variant">Add one level scoop of {product.name} powder. Watch the reaction begin.</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex gap-6">
-                  <div className="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-black text-xl shrink-0 border border-outline-variant/20">03</div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2 flex items-center gap-2">
-                      <RotateCw className="w-5 h-5 text-tertiary" />
-                      Ignite
-                    </h4>
-                    <p className="text-on-surface-variant">Shake vigorously for 15-20 seconds. Drink immediately and unleash the apex predator.</p>
+                  <div className="flex gap-6">
+                    <div className="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-black text-xl shrink-0 border border-outline-variant/20">03</div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-2 flex items-center gap-2">
+                        <RotateCw className="w-5 h-5 text-tertiary" />
+                        Ignite
+                      </h4>
+                      <p className="text-on-surface-variant">Shake vigorously for 15-20 seconds. Drink immediately and unleash the apex predator.</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="order-1 lg:order-2 relative">
-              <div 
-                className="absolute inset-0 blur-[120px] opacity-20 pointer-events-none"
-                style={{ backgroundColor: product.accentColor }}
-              />
-              <div className="relative aspect-square bg-surface-container rounded-[3rem] border border-outline-variant/10 flex items-center justify-center p-12 overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <img 
-                  src={product.img} 
-                  alt="Preparation" 
-                  className="w-full h-full object-contain rotate-12 group-hover:rotate-0 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
+              <div className="order-1 lg:order-2 relative">
+                <div 
+                  className="absolute inset-0 blur-[120px] opacity-20 pointer-events-none"
+                  style={{ backgroundColor: product.accentColor }}
                 />
+                <div className="relative aspect-square bg-surface-container rounded-[3rem] border border-outline-variant/10 flex items-center justify-center p-12 overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <img 
+                    src={product.img} 
+                    alt="Preparation" 
+                    className="w-full h-full object-contain rotate-12 group-hover:rotate-0 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Ingredients Section */}
       <section className="py-20 bg-background">

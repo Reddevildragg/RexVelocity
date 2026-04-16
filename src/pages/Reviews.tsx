@@ -1,21 +1,20 @@
 import { motion } from 'motion/react';
-import { useState } from 'react';
-import { MapPin, Search, Star, User } from 'lucide-react';
+import { Star, User, Quote, Instagram, Twitter, MessageSquare, Award } from 'lucide-react';
 
 export const Reviews = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const stores = [
-    { name: 'Apex Fitness Center', address: '123 Performance Way, London', distance: '0.8 miles', status: 'Open' },
-    { name: 'Velocity Supplements', address: '45 High Street, Manchester', distance: '2.4 miles', status: 'Open' },
-    { name: 'Primal Gym & Spa', address: '88 Evolution Road, Birmingham', distance: '5.1 miles', status: 'Closing Soon' },
-    { name: 'The Surge Market', address: '12 Coastal Path, Brighton', distance: '12.4 miles', status: 'Open' }
+  const reviews = [
+    { name: 'Alex Rivera', role: 'Crossfit Athlete', text: 'Rex Velocity is the only drink that keeps me going through my double sessions without the crash.', rating: 5, date: '2 days ago' },
+    { name: 'Jordan Smith', role: 'Digital Nomad', text: 'The focus I get from the L-Theanine blend is incredible. It\'s my secret weapon for long coding nights.', rating: 5, date: '1 week ago' },
+    { name: 'Elena Petrova', role: 'Yoga Instructor', text: 'Clean energy that actually tastes good. I love that it uses natural extracts.', rating: 5, date: '2 weeks ago' },
+    { name: 'Marcus Chen', role: 'Ultra Runner', text: 'Primal Punch is my fuel for mountain trails. The electrolyte balance feels surgical.', rating: 5, date: '1 month ago' },
+    { name: 'Sarah Jenkins', role: 'Physiotherapist', text: 'I recommend the mixable powders to my clients for focused recovery sessions.', rating: 4, date: '3 months ago' },
+    { name: 'David G.', role: 'Pro Surfer', text: 'Volcanic Blood is a ritual for dawn patrol. Sharp citrus, sharp focus.', rating: 5, date: '4 months ago' }
   ];
 
-  const reviews = [
-    { name: 'Alex Rivera', role: 'Crossfit Athlete', text: 'Rex Velocity is the only drink that keeps me going through my double sessions without the crash.', rating: 5 },
-    { name: 'Jordan Smith', role: 'Digital Nomad', text: 'The focus I get from the L-Theanine blend is incredible. It\'s my secret weapon for long coding nights.', rating: 5 },
-    { name: 'Elena Petrova', role: 'Yoga Instructor', text: 'Clean energy that actually tastes good. I love that it uses natural extracts.', rating: 4 }
+  const socialStats = [
+    { label: 'Apex Points', value: '450k+', icon: Instagram },
+    { label: 'Surge Sprints', value: '1.2M', icon: Twitter },
+    { label: 'biological Reviews', value: '15k+', icon: MessageSquare }
   ];
 
   return (
@@ -24,154 +23,92 @@ export const Reviews = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen"
+      className="min-h-screen bg-background"
     >
       {/* Hero Section */}
-      <section className="pt-40 pb-20 bg-surface-container-low relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10 text-center lg:text-left">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto lg:mx-0"
-          >
-            <h1 className="text-5xl sm:text-7xl md:text-8xl font-black font-headline tracking-tighter mb-6 uppercase italic leading-none">
-              Find Your <span className="text-secondary">Source</span>
-            </h1>
-            <p className="text-lg md:text-xl text-on-surface-variant font-light leading-relaxed">
-              The surge is spreading. Locate your nearest Rex Velocity authorized dealer or join the pack as a wholesale partner.
-            </p>
-          </motion.div>
+      <section className="min-h-[70vh] flex items-center relative overflow-hidden pt-32 pb-20">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/10 rounded-full blur-[160px] animate-pulse"></div>
+          <img 
+            alt="Abstract performance background" 
+            className="w-full h-full object-cover opacity-10 mix-blend-overlay grayscale" 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPY8onMpth-5sEIC9n2LpPXU6q2cb2tFKxWxTzbvDIw3agvnC5M2f4VPdy4m6HJ4y7dyCCL3cY7xXN2n3BIjuDYBCGs_mQHzqBZTlSoovifjwTDzJnfe2XNXnNs24cDFWM7W_ZHtteAcfiThHt22joIacjxt5Jl7oDZBLnLWDpzcXK_8EEyfGJVtDw6ikaVyVu1vNm2fhl8dFgTb4GSuc58Fjsh-dq1Z1ee12A33gYdkZ7YjxPv9jC8KJ4dQhcyg3ujLeysCkVaak" 
+            referrerPolicy="no-referrer" 
+          />
         </div>
-        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
-          <MapPin className="w-[500px] h-[500px] text-primary rotate-12 animate-float" />
-        </div>
-      </section>
-
-      {/* Store Locator Section */}
-      <section className="py-24 md:py-32">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-12 items-center text-center lg:text-left">
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-1 space-y-6 md:space-y-8"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="lg:w-3/5"
             >
-              <div className="bg-surface-container-high p-6 md:p-8 rounded-3xl border border-outline-variant/10 shadow-xl shadow-black/5">
-                <h3 className="text-xl md:text-2xl font-bold font-headline mb-6">Search Territory</h3>
-                <div className="relative mb-6">
-                  <input
-                    type="text"
-                    placeholder="Enter City or Postcode"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-full py-3 md:py-4 px-6 focus:outline-none focus:border-primary transition-colors text-sm md:text-base"
-                  />
-                  <Search className="absolute right-6 top-1/2 -translate-y-1/2 text-on-surface-variant w-5 h-5" />
-                </div>
-                <div className="space-y-4 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
-                  {stores.map((store, i) => (
-                    <motion.div 
-                      key={i} 
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 }}
-                      className="p-4 rounded-2xl hover:bg-surface-container-highest transition-colors cursor-pointer border border-transparent hover:border-primary/20 group"
-                    >
-                      <div className="flex justify-between items-start mb-1">
-                        <h4 className="font-bold group-hover:text-primary transition-colors">{store.name}</h4>
-                        <span className="text-[10px] font-label text-secondary uppercase">{store.distance}</span>
-                      </div>
-                      <p className="text-xs text-on-surface-variant mb-2">{store.address}</p>
-                      <span className={`text-[10px] font-bold uppercase ${store.status === 'Open' ? 'text-green-500' : 'text-orange-500'}`}>
-                        {store.status}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+              <h1 className="text-6xl sm:text-8xl md:text-9xl font-black font-headline tracking-tighter mb-8 uppercase italic leading-[0.8] drop-shadow-2xl">
+                Voice <br />of the <span className="text-primary italic">Apex</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-on-surface-variant font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                Real results from elite performers. Discover how Rex Velocity is redefining the biological limit of human velocity.
+              </p>
             </motion.div>
             
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-2"
-            >
-              <div className="w-full h-[600px] bg-surface-container-highest rounded-[3rem] relative overflow-hidden border border-outline-variant/10 shadow-2xl shadow-black/10">
-                {/* Placeholder for Map */}
-                <div className="absolute inset-0 opacity-20 grayscale">
-                  <img alt="Abstract map pattern" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs7P3z6elJ_vZ64UexC9qos5pI7PxIrZMc9UTXkaoJVey1F_YX5iRXv3MR1XI8v7aJ6Zmq-zZWMUC0e8NmIsVmXnE3O5Rk3hs-fyNG5LyCB2gl0GVsoaGkcDt-Udnp8cEhZaszkzDjxZfeT3bBwigEQpK31Ow2s9tzUeZJ0ykMdzQaJ-id6XGEz-o03KB87iMXsSJhqG92_Dt0Hh_Y9lrrHgth8WjI8H0I_KHfgUUTxDbk4Yk84-7qk2itMxotQNZnhgDeALlHP9k" referrerPolicy="no-referrer" />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4 }}
-                    className="text-center p-12 bg-background/80 backdrop-blur-md rounded-3xl border border-white/10 max-w-md"
-                  >
-                    <MapPin className="w-16 h-16 text-primary mb-4 animate-bounce mx-auto" />
-                    <h4 className="text-2xl font-bold font-headline mb-2">Interactive Map</h4>
-                    <p className="text-on-surface-variant text-sm">Our global distribution network is expanding. Use the search to find locations near you.</p>
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
+            <div className="lg:w-2/5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6 w-full lg:max-w-xs">
+              {socialStats.map((stat, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 + (idx * 0.1) }}
+                  className="bg-surface-container-high/40 backdrop-blur-md p-6 rounded-[2rem] border border-white/5 shadow-2xl flex items-center lg:flex-row flex-col gap-4 text-center lg:text-left group hover:bg-surface-container-highest/60 transition-colors"
+                >
+                  <div className="w-12 h-12 bg-background rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                    <stat.icon className="w-6 h-6 text-secondary" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-black font-headline text-on-surface">{stat.value}</div>
+                    <div className="text-[10px] font-black uppercase tracking-widest text-on-surface-variant/60">{stat.label}</div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Reviews Section (Voice of the Apex) */}
-      <section className="py-24 bg-surface-container-low">
+      {/* Reviews Grid Section */}
+      <section className="py-24 md:py-32">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-bold font-headline mb-4 uppercase italic"
-            >
-              Voice of the <span className="text-primary">Apex</span>
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-on-surface-variant uppercase tracking-[0.3em] text-sm"
-            >
-              Real Results. Zero Compromise.
-            </motion.p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {reviews.map((review, i) => (
               <motion.div 
                 key={i} 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-surface-container-high p-10 rounded-3xl border border-outline-variant/10 relative group hover:bg-surface-container-highest transition-colors"
+                className="bg-surface-container-high p-10 rounded-[2.5rem] border border-outline-variant/10 relative group hover:bg-surface-container-highest transition-all duration-500 hover:scale-[1.02] flex flex-col h-full"
               >
-                <div className="flex gap-1 text-secondary mb-6">
-                  {Array.from({ length: review.rating }).map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-current" />
+                <div className="absolute top-8 right-8 text-on-surface-variant/10 group-hover:text-primary/10 transition-colors">
+                  <Quote className="w-12 h-12 fill-current" />
+                </div>
+                
+                <div className="flex gap-1 text-secondary mb-6 relative z-10">
+                  {Array.from({ length: 5 }).map((_, j) => (
+                    <Star key={j} className={`w-4 h-4 ${j < review.rating ? 'fill-current' : 'opacity-20'}`} />
                   ))}
                 </div>
-                <p className="text-lg font-medium leading-relaxed mb-8 italic">"{review.text}"</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-colors">
+                
+                <p className="text-lg font-medium leading-relaxed mb-8 italic relative z-10 grow">"{review.text}"</p>
+                
+                <div className="flex items-center gap-4 pt-8 border-t border-outline-variant/10 relative z-10 mt-auto">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-colors">
                     <User className="w-6 h-6 text-primary group-hover:text-on-primary transition-colors" />
                   </div>
                   <div>
-                    <h5 className="font-bold">{review.name}</h5>
-                    <p className="text-on-surface-variant text-xs font-label uppercase tracking-widest">{review.role}</p>
+                    <h5 className="font-bold text-lg">{review.name}</h5>
+                    <p className="text-on-surface-variant text-[10px] font-black uppercase tracking-[0.2em]">{review.role}</p>
                   </div>
+                  <span className="ml-auto text-[9px] font-black text-on-surface-variant/40 uppercase tracking-widest">{review.date}</span>
                 </div>
               </motion.div>
             ))}
@@ -179,40 +116,64 @@ export const Reviews = () => {
         </div>
       </section>
 
-      {/* Wholesale Section */}
-      <section className="py-24 md:py-32 bg-background relative overflow-hidden">
+      {/* Join the Pack Section (Expanded) */}
+      <section className="py-32 bg-surface-container-lowest relative overflow-hidden">
+        <div className="absolute inset-0 bg-primary/5 -skew-y-3 origin-left"></div>
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto bg-surface-container-highest p-8 md:p-20 rounded-[2.5rem] md:rounded-[4rem] border border-primary/20 shadow-2xl shadow-primary/5"
-          >
-            <div className="text-center mb-10 md:mb-12">
-              <h2 className="text-3xl md:text-6xl font-black font-headline mb-4 md:mb-6 uppercase italic leading-none">Join the Pack</h2>
-              <p className="text-on-surface-variant text-base md:text-lg">Interested in stocking Rex Velocity? We're looking for elite partners to expand our territory.</p>
+          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
+            <div className="lg:w-1/2">
+              <h2 className="text-4xl md:text-7xl font-black font-headline mb-8 uppercase italic leading-[0.9] tracking-tighter">
+                Lead the<br /><span className="text-primary font-black">Velocity</span>
+              </h2>
+              <p className="text-xl text-on-surface-variant font-light leading-relaxed mb-10">
+                Biological enhancement is better shared. Join our community of elite performers and access exclusive seasonal drops, limited edition equipment, and territory-specific surges.
+              </p>
+              
+              <div className="flex flex-wrap gap-8">
+                <div>
+                  <span className="block text-4xl font-black font-headline text-on-surface">50k+</span>
+                  <span className="text-xs font-black uppercase tracking-widest text-secondary">Biological Units</span>
+                </div>
+                <div>
+                  <span className="block text-4xl font-black font-headline text-on-surface">120+</span>
+                  <span className="text-xs font-black uppercase tracking-widest text-secondary">Apex Partners</span>
+                </div>
+              </div>
             </div>
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-              <div className="space-y-2">
-                <label className="text-[10px] md:text-xs font-label uppercase tracking-widest text-secondary ml-4">Full Name</label>
-                <input type="text" className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-full py-3 md:py-4 px-6 focus:outline-none focus:border-primary transition-colors text-sm md:text-base" />
+
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:w-1/2 w-full"
+            >
+              <div className="bg-surface-container-high p-10 md:p-14 rounded-[3.5rem] border border-primary/20 shadow-3xl shadow-primary/5">
+                <div className="text-center mb-10">
+                  <h3 className="text-2xl md:text-3xl font-black font-headline uppercase italic leading-none mb-3 italic">Join the Pack</h3>
+                  <p className="text-on-surface-variant text-sm font-light">Enter your coordinates to receive early access protocols.</p>
+                </div>
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-widest text-secondary ml-4">Full Identity</label>
+                      <input type="text" className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-2xl py-4 px-6 focus:outline-none focus:border-primary transition-colors text-base" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-widest text-secondary ml-4">Communication Node</label>
+                      <input type="email" className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-2xl py-4 px-6 focus:outline-none focus:border-primary transition-colors text-base" />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-secondary ml-4">Mission Statement / Why Rex Velocity?</label>
+                    <textarea rows={4} className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-3xl py-4 px-6 focus:outline-none focus:border-primary transition-colors resize-none text-base"></textarea>
+                  </div>
+                  <button type="submit" className="w-full kinetic-gradient text-on-primary-fixed py-5 rounded-full font-black font-headline uppercase italic tracking-widest text-xl hover:scale-[1.03] active:scale-95 transition-all shadow-xl shadow-primary/30">
+                    Authorize Entry
+                  </button>
+                </form>
               </div>
-              <div className="space-y-2">
-                <label className="text-[10px] md:text-xs font-label uppercase tracking-widest text-secondary ml-4">Business Email</label>
-                <input type="email" className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-full py-3 md:py-4 px-6 focus:outline-none focus:border-primary transition-colors text-sm md:text-base" />
-              </div>
-              <div className="space-y-2 md:col-span-2">
-                <label className="text-[10px] md:text-xs font-label uppercase tracking-widest text-secondary ml-4">Message / Inquiry</label>
-                <textarea rows={4} className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-2xl md:rounded-3xl py-3 md:py-4 px-6 focus:outline-none focus:border-primary transition-colors resize-none text-sm md:text-base"></textarea>
-              </div>
-              <div className="md:col-span-2 text-center mt-4 md:mt-6">
-                <button type="submit" className="kinetic-gradient text-on-primary-fixed px-10 md:px-12 py-4 md:py-5 rounded-full font-bold text-lg md:text-xl hover:scale-105 transition-transform shadow-2xl shadow-primary/20 w-full sm:w-auto">
-                  Submit Inquiry
-                </button>
-              </div>
-            </form>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
     </motion.div>

@@ -6,7 +6,7 @@ import { Trash2, Plus, Minus, ShoppingBag, ArrowRight } from 'lucide-react';
 export const Cart = () => {
   const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
 
-  const subtotal = cart.reduce((sum, item) => sum + (item.quantity * 24.99), 0); // Assuming a price of $24.99 per item
+  const subtotal = cart.reduce((sum, item) => sum + (item.quantity * 24.99), 0); // Assuming a price of £24.99 per item
   const shipping = subtotal > 50 ? 0 : 5.99;
   const total = subtotal + shipping;
 
@@ -104,8 +104,8 @@ export const Cart = () => {
                     </div>
 
                     <div className="text-right">
-                      <p className="text-2xl font-black font-headline text-primary">${(item.quantity * 24.99).toFixed(2)}</p>
-                      <p className="text-xs text-on-surface-variant opacity-60">$24.99 / unit</p>
+                      <p className="text-2xl font-black font-headline text-primary">£{(item.quantity * 24.99).toFixed(2)}</p>
+                      <p className="text-xs text-on-surface-variant opacity-60">£24.99 / unit</p>
                     </div>
                   </motion.div>
                 ))}
@@ -121,17 +121,17 @@ export const Cart = () => {
               <div className="space-y-4 mb-8">
                 <div className="flex justify-between text-on-surface-variant">
                   <span>Subtotal</span>
-                  <span className="font-bold text-on-surface">${subtotal.toFixed(2)}</span>
+                  <span className="font-bold text-on-surface">£{subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-on-surface-variant">
                   <span>Shipping</span>
                   <span className="font-bold text-on-surface">
-                    {shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`}
+                    {shipping === 0 ? 'FREE' : `£${shipping.toFixed(2)}`}
                   </span>
                 </div>
                 <div className="pt-4 border-t border-outline-variant/10 flex justify-between items-end">
                   <span className="text-xl font-black font-headline italic uppercase">Total</span>
-                  <span className="text-3xl font-black font-headline text-primary">${total.toFixed(2)}</span>
+                  <span className="text-3xl font-black font-headline text-primary">£{total.toFixed(2)}</span>
                 </div>
               </div>
 

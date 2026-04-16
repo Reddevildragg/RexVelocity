@@ -28,6 +28,7 @@ export const Navbar = () => {
     { name: 'Formula', href: '/formula' },
     { name: 'Shop', href: '/shop' },
     { name: 'Reviews', href: '/reviews' },
+    { name: 'Find Your Source', href: '/locations' },
   ];
 
   return (

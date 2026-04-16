@@ -2,6 +2,7 @@ export interface Product {
   id: string;
   name: string;
   flavor: string;
+  type?: 'can' | 'powder';
   color: string;
   accentColor: string;
   img: string;
@@ -178,6 +179,50 @@ export const products: Product[] = [
       { label: 'Total Sugar', value: '0g' },
       { label: 'Caffeine', value: '180mg' },
       { label: 'Electrolytes', value: '400mg' }
+    ]
+  },
+  {
+    id: '09',
+    name: 'VOLCANIC BLOOD MIX',
+    flavor: 'Blood Orange & Ginger (Powder Tub)',
+    type: 'powder',
+    color: 'text-primary',
+    accentColor: '#ff8f70',
+    img: 'https://images.unsplash.com/photo-1593095391039-65873995f71b?auto=format&fit=crop&q=80&w=1000',
+    description: 'A seismic shift in energy, now in a customizable formula. Volcanic Blood combines the sharp, citrus bite of Mediterranean blood oranges with a slow-burn ginger finish that ignites your focus.',
+    flavorNotes: ['Zesty Blood Orange', 'Spicy Ginger Root', 'Citrus Undertones'],
+    benefits: [
+      { title: 'Neural Ignition', description: '200mg of natural caffeine for immediate cognitive startup.' },
+      { title: 'Metabolic Heat', description: 'Ginger extract to support thermogenesis and sustained energy.' },
+      { title: 'Zero Crash', description: 'Balanced with L-Theanine for a smooth descent.' }
+    ],
+    nutrition: [
+      { label: 'Calories', value: '10' },
+      { label: 'Total Sugar', value: '0g' },
+      { label: 'Caffeine', value: '200mg' },
+      { label: 'Servings', value: '30' }
+    ]
+  },
+  {
+    id: '10',
+    name: 'ELECTRIC EXTINCTION MIX',
+    flavor: 'Sour Lemon & Caffeine (Powder Tub)',
+    type: 'powder',
+    color: 'text-secondary',
+    accentColor: '#ffd709',
+    img: 'https://images.unsplash.com/photo-1579722820308-d74e5719d36a?auto=format&fit=crop&q=80&w=1000',
+    description: 'Shock your system into the next era. Electric Extinction delivers a high-voltage sour lemon surge, now available in a 30-serving tub to let you control the voltage.',
+    flavorNotes: ['Electric Lemon', 'Tart Citrus', 'Neon Sour'],
+    benefits: [
+      { title: 'High Voltage', description: 'Rapid-release caffeine for instant physical velocity.' },
+      { title: 'Electrolyte Surge', description: 'Optimized mineral blend for peak biological hydration.' },
+      { title: 'Zero Sugar', description: 'Pure energy without the insulin spike.' }
+    ],
+    nutrition: [
+      { label: 'Calories', value: '5' },
+      { label: 'Total Sugar', value: '0g' },
+      { label: 'Caffeine', value: '200mg' },
+      { label: 'Servings', value: '30' }
     ]
   }
 ];

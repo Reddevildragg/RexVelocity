@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { motion } from 'motion/react';
 import { PawPrint, Zap, Droplets, Brain, Star, Leaf, ArrowRight, Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,6 +7,11 @@ import { useCart } from '../context/CartContext';
 
 export const Science = () => {
   const { addToCart } = useCart();
+
+  const featuredProducts = useMemo(() => {
+    return [...products].sort(() => 0.5 - Math.random()).slice(0, 3);
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -177,15 +183,15 @@ export const Science = () => {
           >
             EVOLUTIONARY <span className="text-outline-variant">PATH</span>
           </motion.h2>
-          <div className="relative border-l-2 border-outline-variant/30 ml-4 md:ml-0 md:flex md:border-l-0 md:border-t-2 md:pt-12 gap-8 lg:gap-12">
+          <div className="relative border-l-2 border-outline-variant/30 ml-6 md:ml-0 md:flex md:border-l-0 md:border-t-2 md:pt-12 gap-8 lg:gap-12">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mb-12 md:mb-0 relative md:w-1/4"
+              className="mb-16 md:mb-0 relative md:w-1/4 pl-12 md:pl-0"
             >
-              <div className="absolute -left-6 top-0 md:-top-16 md:left-0 w-10 h-10 md:w-12 md:h-12 bg-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,143,112,0.6)]">
+              <div className="absolute -left-5 top-0 md:-top-16 md:left-0 w-10 h-10 md:w-12 md:h-12 bg-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,143,112,0.6)]">
                 <span className="text-on-primary font-bold text-sm md:text-base">21</span>
               </div>
               <h4 className="text-xl md:text-2xl font-bold font-headline mb-3 md:mb-4 md:mt-4">The Spark</h4>
@@ -201,9 +207,9 @@ export const Science = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-12 md:mb-0 relative md:w-1/4"
+              className="mb-16 md:mb-0 relative md:w-1/4 pl-12 md:pl-0"
             >
-              <div className="absolute -left-6 top-0 md:-top-16 md:left-0 w-10 h-10 md:w-12 md:h-12 bg-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,143,112,0.6)]">
+              <div className="absolute -left-5 top-0 md:-top-16 md:left-0 w-10 h-10 md:w-12 md:h-12 bg-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,143,112,0.6)]">
                 <span className="text-on-primary font-bold text-sm md:text-base">22</span>
               </div>
               <h4 className="text-xl md:text-2xl font-bold font-headline mb-3 md:mb-4 md:mt-4">The Awakening</h4>
@@ -219,9 +225,9 @@ export const Science = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mb-12 md:mb-0 relative md:w-1/4"
+              className="mb-16 md:mb-0 relative md:w-1/4 pl-12 md:pl-0"
             >
-              <div className="absolute -left-6 top-0 md:-top-16 md:left-0 w-10 h-10 md:w-12 md:h-12 bg-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,143,112,0.6)]">
+              <div className="absolute -left-5 top-0 md:-top-16 md:left-0 w-10 h-10 md:w-12 md:h-12 bg-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,143,112,0.6)]">
                 <span className="text-on-primary font-bold text-sm md:text-base">23</span>
               </div>
               <h4 className="text-xl md:text-2xl font-bold font-headline mb-3 md:mb-4 md:mt-4">Global Surge</h4>
@@ -237,9 +243,9 @@ export const Science = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative md:w-1/4"
+              className="relative md:w-1/4 pl-12 md:pl-0"
             >
-              <div className="absolute -left-6 top-0 md:-top-16 md:left-0 w-10 h-10 md:w-12 md:h-12 kinetic-gradient rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(255,215,9,0.4)]">
+              <div className="absolute -left-5 top-0 md:-top-16 md:left-0 w-10 h-10 md:w-12 md:h-12 kinetic-gradient rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(255,215,9,0.4)]">
                 <span className="text-on-primary font-bold text-sm md:text-base">24</span>
               </div>
               <h4 className="text-xl md:text-2xl font-bold font-headline mb-3 md:mb-4 md:mt-4 text-secondary">Apex Status</h4>
@@ -330,16 +336,16 @@ export const Science = () => {
         </div>
       </section>
 
-      {/* Meet the Apex Section */}
-      <section className="py-32 bg-background overflow-hidden">
+      {/* The Arsenal Section */}
+      <section className="py-32 bg-background overflow-hidden border-t border-outline-variant/10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-7xl font-black font-headline uppercase italic leading-none mb-6">The <span className="text-primary">Apex</span> Lineup</h2>
-            <p className="text-on-surface-variant text-lg max-w-2xl mx-auto">Every flavor is a unique biological trigger, engineered for specific performance outcomes.</p>
+            <h2 className="text-4xl md:text-7xl font-black font-headline uppercase italic leading-none mb-6">THE <span className="text-primary">ARSENAL</span></h2>
+            <p className="text-on-surface-variant text-lg max-w-2xl mx-auto font-light">Engineered for the hunt. Biological triggers customized for every stage of performance.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {products.map((product, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {featuredProducts.map((product, index) => (
               <motion.div
                 key={product.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -349,41 +355,39 @@ export const Science = () => {
               >
                 <Link 
                   to={`/product/${product.id}`}
-                  className="group block relative bg-surface-container-low rounded-[2rem] p-6 border border-outline-variant/10 hover:border-primary/30 transition-all overflow-hidden h-full"
+                  className="group block relative bg-surface-container-low rounded-[3rem] p-8 border border-outline-variant/10 hover:border-primary/30 transition-all overflow-hidden h-full shadow-lg shadow-black/5"
                 >
                   <div 
-                    className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500"
+                    className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"
                     style={{ backgroundColor: product.accentColor }}
                   />
                   <div className="relative z-10 flex flex-col h-full">
-                    <div className="aspect-[3/4] mb-6 relative">
+                    <div className="aspect-square mb-8 relative">
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <img 
                         src={product.img} 
                         alt={product.name} 
-                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-xl"
+                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl relative z-10"
                         referrerPolicy="no-referrer"
                       />
                     </div>
                     <div className="min-h-[3rem] flex items-center mb-1">
-                      <h4 className="text-xl font-black font-headline uppercase italic line-clamp-2">{product.name}</h4>
+                      <h4 className="text-2xl font-black font-headline uppercase italic line-clamp-2 leading-tight">{product.name}</h4>
                     </div>
-                    <p className={`text-xs font-bold uppercase tracking-widest mb-4 ${product.color}`}>{product.flavor}</p>
-                    <div className="mt-auto flex items-center gap-3">
-                      <Link 
-                        to={`/product/${product.id}`}
-                        className="flex-1 bg-on-surface text-background py-3 rounded-full font-bold text-center text-xs uppercase tracking-widest hover:scale-105 transition-all"
-                      >
-                        View Details
-                      </Link>
+                    <p className={`text-sm font-bold uppercase tracking-widest mb-6 ${product.color}`}>{product.flavor}</p>
+                    <div className="mt-auto flex items-center gap-4">
+                      <div className="flex-1 bg-on-surface text-background py-4 rounded-full font-bold text-center text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-black/20">
+                        Deploy Arsenal
+                      </div>
                       <button 
                         onClick={(e) => {
                           e.preventDefault();
                           addToCart(product);
                         }}
-                        className="w-10 h-10 bg-surface-container-highest text-on-surface rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all hover:scale-110"
+                        className="w-12 h-12 bg-surface-container-highest text-on-surface rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all hover:scale-110 active:scale-90"
                         title="Add to Cart"
                       >
-                        <Plus className="w-4 h-4" />
+                        <Plus className="w-5 h-5" />
                       </button>
                     </div>
                   </div>
@@ -391,40 +395,24 @@ export const Science = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Final CTA */}
-      <section className="py-32 relative">
-        <div className="absolute inset-0 bg-primary/5 -skew-y-3 origin-left"></div>
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <motion.h2 
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-8xl font-black font-headline tracking-tighter mb-8 leading-none italic"
+            className="text-center"
           >
-            UNLEASH THE<br /><span className="text-secondary">PRIMAL SURGE</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto"
-          >
-            Experience the evolutionary leap in energy science. No synthetics. No compromises. Just pure velocity.
-          </motion.p>
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
-            <Link to="/shop" className="kinetic-gradient text-on-primary-fixed px-10 md:px-12 py-4 md:py-5 rounded-full font-bold text-lg md:text-xl hover:scale-110 transition-transform shadow-2xl shadow-primary/20 w-full sm:w-auto text-center">
-              Shop Bundles
+            <Link 
+              to="/shop" 
+              className="inline-flex items-center gap-3 text-on-surface group hover:text-primary transition-colors font-black font-headline italic uppercase text-xl leading-none"
+            >
+              View Full Arsenal
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
-            <button className="bg-surface-container-highest px-10 md:px-12 py-4 md:py-5 rounded-full font-bold text-lg md:text-xl hover:bg-surface-bright transition-colors w-full sm:w-auto">
-              Sample Pack
-            </button>
-          </div>
+          </motion.div>
         </div>
       </section>
+
     </motion.div>
   );
 };

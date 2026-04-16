@@ -10,6 +10,7 @@ import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { Science } from './pages/Science';
 import { Reviews } from './pages/Reviews';
+import { Locations } from './pages/Locations';
 import { ProductDetail } from './pages/ProductDetail';
 import { Shop } from './pages/Shop';
 import { Cart } from './pages/Cart';
@@ -36,6 +37,7 @@ const AnimatedRoutes = () => {
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/reviews" element={<Reviews />} />
+          <Route path="/locations" element={<Locations />} />
           <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
       </div>
