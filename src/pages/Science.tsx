@@ -4,6 +4,7 @@ import { PawPrint, Zap, Droplets, Brain, Star, Leaf, ArrowRight, Plus } from 'lu
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
+import { Container } from '../components/Container';
 
 export const Science = () => {
   const { addToCart } = useCart();
@@ -26,7 +27,7 @@ export const Science = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] animate-pulse"></div>
           <img alt="Abstract molten lava flows in dark space" className="w-full h-full object-cover opacity-20 mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP4WCD_rQAY0bRnqcqf7scDnjAaD-pM9SExQTQmJm14LNsNCRIDkxrAEe_7mVCTwDK12uSpvoBejwaXicoyMMVaZim8m1wsY2-h6Q02H0auqj35fU1uzITtjlkCGkZBkdSHYcsSkKKUCipH51mB4t440GHBprZt7L6dlZYW3TFKwBVq9qZJwnylZB5htrmnhWDDgVavV62tz7FTxSrfrKg5ckkIAp8Gh2OJYhdpN9AgC7YwMI3t7lICB7GismbQXrD_NcjxeOxtlc" referrerPolicy="no-referrer" />
         </div>
-        <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
+        <Container className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -49,24 +50,26 @@ export const Science = () => {
             </div>
           </motion.div>
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 12 }}
+            initial={{ opacity: 0, scale: 0.9, rotateY: 20, rotateX: 10 }}
+            animate={{ opacity: 1, scale: 1, rotateY: 15, rotateX: 5 }}
+            whileHover={{ rotateY: 0, rotateX: 0, scale: 1.05 }}
             transition={{ duration: 1 }}
-            className="relative"
+            style={{ perspective: 1000 }}
+            className="relative cursor-pointer"
           >
-            <div className="relative z-10 transform scale-110">
-              <img alt="3D render of a sleek metallic orange energy drink can" className="rounded-3xl shadow-2xl shadow-primary/40 rotate-[-15deg] max-w-md mx-auto animate-float" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATMMM8SoRltbc0tHnNFEXlgxLTpzea0Qfwj-tkPqUE8BVQTNqdxTuKijQmx-99igrZQDsopmOx5YbGvjO_DAw-IAQzNxvJViVdNQbwZtGxeJ9lm-AkaClvxLojuizGLiZOmDbTpKbP7Zkj4GPcAllcIH_XflOHLwfj3YrXg-XpcbXEmAk2EATqXBVoqtnQ_oVs_PCppfqM7qHN5yKT9Na9D-eKadYvM96HzNR-u5SnIJACClPd9Dp6tYYl7lGW2LE1UgrXP-HdUaA" referrerPolicy="no-referrer" />
+            <div className="relative z-10">
+              <img alt="Volcanic Blood energy drink can" className="rounded-[3rem] shadow-3xl shadow-primary/30 max-w-md mx-auto scale-150" src="/Volcanic_blood_can.jpg" referrerPolicy="no-referrer" />
             </div>
             <div className="absolute -bottom-20 -right-20 z-20 w-80 h-80 opacity-90 hidden lg:block">
               <PawPrint className="w-[240px] h-[240px] text-secondary rotate-12 animate-pulse fill-current" />
             </div>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
       {/* Clean Energy Formula Section */}
       <section className="py-24 bg-surface-container-low">
-        <div className="container mx-auto px-6">
+        <Container>
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -169,12 +172,12 @@ export const Science = () => {
               </div>
             </motion.div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Timeline Section */}
       <section className="py-32 overflow-hidden bg-background">
-        <div className="container mx-auto px-6">
+        <Container>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -257,12 +260,12 @@ export const Science = () => {
               </div>
             </motion.div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Testimonials Bento Grid */}
       <section className="py-24 bg-surface-container-low">
-        <div className="container mx-auto px-6">
+        <Container>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -333,12 +336,12 @@ export const Science = () => {
               <Leaf className="w-16 h-16 animate-pulse fill-current" />
             </motion.div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* The Arsenal Section */}
       <section className="py-32 bg-background overflow-hidden border-t border-outline-variant/10">
-        <div className="container mx-auto px-6">
+        <Container>
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-7xl font-black font-headline uppercase italic leading-none mb-6">THE <span className="text-primary">ARSENAL</span></h2>
             <p className="text-on-surface-variant text-lg max-w-2xl mx-auto font-light">Engineered for the hunt. Biological triggers customized for every stage of performance.</p>
@@ -363,18 +366,25 @@ export const Science = () => {
                   />
                   <div className="relative z-10 flex flex-col h-full">
                     <div className="aspect-square mb-8 relative">
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <img 
-                        src={product.img} 
-                        alt={product.name} 
-                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl relative z-10"
-                        referrerPolicy="no-referrer"
-                      />
+                      <motion.div 
+                        initial={{ rotateY: 10, rotateX: 5 }}
+                        whileHover={{ rotateY: 0, rotateX: 0, scale: 1.05 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        style={{ perspective: 1000 }}
+                        className="w-full h-full"
+                      >
+                        <img 
+                          src={product.img} 
+                          alt={product.name} 
+                          className="w-full h-full object-cover rounded-[2.5rem] shadow-xl shadow-black/30 relative z-10"
+                          referrerPolicy="no-referrer"
+                        />
+                      </motion.div>
                     </div>
-                    <div className="min-h-[3rem] flex items-center mb-1">
-                      <h4 className="text-2xl font-black font-headline uppercase italic line-clamp-2 leading-tight">{product.name}</h4>
+                    <div className="min-h-[4rem] flex items-center mb-1">
+                      <h4 className="text-2xl font-black font-headline uppercase italic leading-[1.1] py-1">{product.name}</h4>
                     </div>
-                    <p className={`text-sm font-bold uppercase tracking-widest mb-6 ${product.color}`}>{product.flavor}</p>
+                    <p className={`text-sm font-bold uppercase tracking-widest mb-6 ${product.color} min-h-[2.5rem] flex items-start`}>{product.flavor}</p>
                     <div className="mt-auto flex items-center gap-4">
                       <div className="flex-1 bg-on-surface text-background py-4 rounded-full font-bold text-center text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-black/20">
                         Deploy Arsenal
@@ -382,9 +392,10 @@ export const Science = () => {
                       <button 
                         onClick={(e) => {
                           e.preventDefault();
+                          e.stopPropagation();
                           addToCart(product);
                         }}
-                        className="w-12 h-12 bg-surface-container-highest text-on-surface rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all hover:scale-110 active:scale-90"
+                        className="w-12 h-12 bg-surface-container-highest text-on-surface rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all hover:scale-110 active:scale-90 relative z-20"
                         title="Add to Cart"
                       >
                         <Plus className="w-5 h-5" />
@@ -410,7 +421,7 @@ export const Science = () => {
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
     </motion.div>

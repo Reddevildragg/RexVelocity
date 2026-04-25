@@ -35,7 +35,7 @@ export const ProductArsenal = () => {
                 style={{ backgroundColor: activeProduct.color }}
               />
               <img
-                src={activeProduct.image}
+                src={activeProduct.img}
                 alt={activeProduct.name}
                 className="w-full max-w-sm mx-auto drop-shadow-[0_0_40px_rgba(0,0,0,0.5)]"
                 referrerPolicy="no-referrer"
@@ -69,8 +69,8 @@ export const ProductArsenal = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {activeProduct.benefits.map((benefit, i) => (
                 <div key={i} className="flex items-center gap-3 p-4 glass-panel">
-                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: activeProduct.color }} />
-                  <span className="font-bold uppercase tracking-widest text-sm">{benefit}</span>
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: activeProduct.accentColor }} />
+                  <span className="font-bold uppercase tracking-widest text-sm">{benefit.title}</span>
                 </div>
               ))}
             </div>

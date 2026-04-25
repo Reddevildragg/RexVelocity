@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
+import { Container } from '../components/Container';
 
 export const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,7 +33,7 @@ export const Home = () => {
         <div className="absolute inset-0 z-0 opacity-40">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-dim/30 via-transparent to-transparent"></div>
         </div>
-        <div className="container ml-0 mr-0 px-6 py-3 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+        <Container className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 items-center py-3">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -47,15 +48,12 @@ export const Home = () => {
               Engineered for the modern apex predator. No jitters. No crash. Just raw, prehistoric power in every can.
             </p>
             <div className="flex flex-wrap gap-4 md:gap-6 justify-center lg:justify-start">
-              <button className="bg-secondary text-on-secondary-fixed px-8 md:px-10 py-3 md:py-4 rounded-full font-black text-base md:text-lg hover:scale-110 transition-transform flex items-center gap-2 group shadow-xl shadow-secondary/20 animate-pulse">
-                GRAB A CASE 
-                <Zap className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform fill-current" />
-              </button>
               <Link 
                 to="/shop"
-                className="border border-outline-variant/30 text-on-surface px-8 md:px-10 py-3 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-surface-container-highest transition-colors flex items-center justify-center"
+                className="bg-secondary text-on-secondary-fixed px-8 md:px-10 py-3 md:py-4 rounded-full font-black text-base md:text-lg hover:scale-110 transition-transform flex items-center gap-2 group shadow-xl shadow-secondary/20 animate-pulse"
               >
-                View Shop
+                GRAB A CASE 
+                <Zap className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform fill-current" />
               </Link>
             </div>
           </motion.div>
@@ -73,12 +71,12 @@ export const Home = () => {
               referrerPolicy="no-referrer"
             />
           </motion.div>
-        </div>
+        </Container>
       </header>
 
       {/* Product Showcase */}
       <section className="py-32 bg-surface-container-low overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+        <Container>
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -147,32 +145,40 @@ export const Home = () => {
                     }}
                     className={`absolute group bg-surface-container-high rounded-[2.5rem] p-8 md:p-10 overflow-hidden transition-shadow duration-500 flex-shrink-0 w-[300px] md:w-[340px] h-[500px] md:h-[580px] border border-outline-variant/10 ${isActive ? 'shadow-2xl shadow-primary/20' : ''} ${!isVisible ? 'pointer-events-none' : ''} ${!mobileVisible ? 'hidden md:flex' : 'flex'}`}
                   >
+                    <Link 
+                      to={`/product/${product.id}`}
+                      className={`absolute inset-0 z-20 ${!isActive ? 'pointer-events-none' : ''}`}
+                      aria-label={`View ${product.name}`}
+                    />
                     <div className="absolute top-0 right-0 p-6 md:p-8">
                       <span className="text-secondary font-black text-5xl md:text-6xl opacity-10 font-headline">{product.id}</span>
                     </div>
                     <div className="relative z-10 flex flex-col items-center h-full justify-between w-full">
                       <div className="flex-1 flex items-center justify-center w-full">
                         <img 
-                          className={`h-64 md:h-80 object-contain transition-all duration-700 ${isActive ? 'animate-glow scale-110' : 'grayscale opacity-50'}`} 
+                          className={`h-56 md:h-72 w-full object-cover rounded-3xl transition-all duration-700 shadow-2xl ${isActive ? 'animate-glow scale-110' : 'grayscale opacity-50'}`} 
                           alt={product.name} 
                           src={product.img} 
                           referrerPolicy="no-referrer" 
                         />
                       </div>
                       <div className={`text-center mt-4 transition-all duration-500 w-full ${isActive ? 'opacity-100 translate-y-0' : 'opacity-40 translate-y-4'}`}>
-                        <div className="min-h-[4rem] md:min-h-[5rem] flex items-center justify-center mb-1">
-                          <h3 className="text-2xl md:text-3xl font-bold font-headline italic leading-tight line-clamp-2">{product.name}</h3>
+                        <div className="min-h-[4rem] md:min-h-[5.5rem] flex items-center justify-center mb-2">
+                          <h3 className="text-2xl md:text-3xl font-bold font-headline italic leading-[1.1] py-1">{product.name}</h3>
                         </div>
-                        <p className={`${product.color} font-bold text-sm md:text-base`}>{product.flavor}</p>
-                        <div className="flex items-center gap-3 mt-4 w-full">
-                          <Link 
-                            to={`/product/${product.id}`}
-                            className={`flex-1 bg-on-surface text-background py-3 rounded-full font-bold text-sm uppercase tracking-widest transition-all ${isActive ? 'opacity-100 translate-y-0 hover:scale-105 active:scale-95' : 'opacity-0 translate-y-4'}`}
+                        <p className={`${product.color} font-bold text-sm md:text-base min-h-[3rem] flex items-center justify-center`}>{product.flavor}</p>
+                        <div className="flex items-center gap-3 mt-4 w-full relative z-30">
+                          <div 
+                            className={`flex-1 bg-on-surface text-background py-3 rounded-full font-bold text-center text-sm uppercase tracking-widest transition-all ${isActive ? 'opacity-100 translate-y-0 group-hover:scale-105 active:scale-95' : 'opacity-0 translate-y-4'}`}
                           >
                             View Details
-                          </Link>
+                          </div>
                           <button 
-                            onClick={() => addToCart(product)}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              addToCart(product);
+                            }}
                             disabled={!isActive}
                             className={`w-12 h-12 bg-surface-container-highest text-on-surface rounded-full flex items-center justify-center transition-all ${isActive ? 'opacity-100 translate-y-0 hover:scale-110 active:scale-90 hover:bg-primary hover:text-on-primary' : 'opacity-0 translate-y-4'}`}
                             title="Add to Cart"
@@ -187,12 +193,12 @@ export const Home = () => {
               })}
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Why Rex? Section */}
       <section className="py-40 relative overflow-hidden">
-        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <Container className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -279,7 +285,7 @@ export const Home = () => {
               </div>
             </div>
           </motion.div>
-        </div>
+        </Container>
         <div className="absolute right-0 bottom-0 opacity-5 pointer-events-none transform translate-x-1/4 translate-y-1/4 scale-150">
           <img className="w-full animate-float" alt="Giant translucent T-Rex head in profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6kMyBb17ryp-HedFlcEKs7u4PpZXm6XtjbhvjXpQGwjBZLXA8eJT3JPfd_LPmLrzHLRYlygyb6unt1wWzMNWAIR1DeI_Aozz6PprPPPdKfi30gOm3GhQ8Zlot7GdZX_r7xijlIcn2eCNWESRkMBh-w50CrDsTJkQDkXCh129FeRQb7rbHMV6wU17OgEU7VcA72tw1f-ulCzJhmm1XvsR_a3-aEQoZ1vo5AYMWOxc7bIZKujd6bVyzr2GT-RPULYLi2ClkCRHCq7Y" referrerPolicy="no-referrer" />
         </div>
@@ -287,13 +293,7 @@ export const Home = () => {
 
       {/* CTA Section */}
       <section className="py-24 px-6">
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto bg-gradient-to-br from-primary-container to-secondary rounded-[3rem] p-16 md:p-24 relative overflow-hidden group"
-        >
+        <Container className="bg-gradient-to-br from-primary-container to-secondary rounded-[3rem] p-16 md:p-24 relative overflow-hidden group">
           <div className="absolute inset-0 bg-neutral-900/10 group-hover:bg-neutral-900/0 transition-colors duration-500"></div>
           <div className="relative z-10 text-center max-w-3xl mx-auto space-y-6 md:space-y-8">
             <h2 className="text-4xl md:text-7xl font-black font-headline text-on-primary-container tracking-tighter uppercase italic leading-none">JOIN THE PACK</h2>
@@ -306,7 +306,7 @@ export const Home = () => {
           <div className="absolute -bottom-10 -left-10 opacity-20 transform -rotate-45">
             <PawPrint className="w-[200px] h-[200px] text-on-primary-container animate-pulse" />
           </div>
-        </motion.div>
+        </Container>
       </section>
     </motion.div>
   );

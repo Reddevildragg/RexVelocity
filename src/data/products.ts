@@ -10,6 +10,7 @@ export interface Product {
   flavorNotes: string[];
   benefits: { title: string; description: string }[];
   nutrition: { label: string; value: string }[];
+  tags: string[];
 }
 
 export const products: Product[] = [
@@ -19,7 +20,7 @@ export const products: Product[] = [
     flavor: 'Blood Orange & Ginger',
     color: 'text-primary',
     accentColor: '#ff8f70',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuASGcT8QnRGfP04zfobSxvbv75pmQ9d4mM2fpnkUTHQ-XRrhoyGbA89sOpqTlJ3zov7mV3EcLAZe6X1s1nmUlHmJ5XhgR6anzHMgZnvXztR5RW-30KsHq3Bc3Gc16XoLjFNv1XdqQefVNKjtAdcIaG-1px8Y_xImsa0CgMuagGsJxQldqZIFNjSfkZk-3nDD_Pa7A1cXUdSh-m8Nk2H7EBMttaSV-cz1W89zJ91MSVmQqKFuKkvg7phWldQvhOZ_N7xTOBv2FTmft8',
+    img: '/Volcanic_blood_can.jpg',
     description: 'A seismic shift in energy. Volcanic Blood combines the sharp, citrus bite of Mediterranean blood oranges with a slow-burn ginger finish that ignites your focus.',
     flavorNotes: ['Zesty Blood Orange', 'Spicy Ginger Root', 'Citrus Undertones'],
     benefits: [
@@ -32,7 +33,8 @@ export const products: Product[] = [
       { label: 'Total Sugar', value: '0g' },
       { label: 'Caffeine', value: '200mg' },
       { label: 'B-Vitamins', value: '100% DV' }
-    ]
+    ],
+    tags: ['Ignite', 'Focus', 'Heat']
   },
   {
     id: '02',
@@ -40,7 +42,7 @@ export const products: Product[] = [
     flavor: 'Sour Lemon & Caffeine',
     color: 'text-secondary',
     accentColor: '#ffd709',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC7r4LNd0l7h-NTYoiNZHtQqrirg8IKEowkoDZN-E0lsONzqkoawr81AbcPvMhnDXckEME6ucreVeZ39rcYhTRAJqDjp2XywN8126x6iqp_Y6HYDU_m3GzNqQwTlYOJWmsh0bpY28f5SZhHOVZtipqNWwMTU34QJrRXCvcg3jbesdXxcG8AbCkR7aYAbeUKFVS75HGEivIJ3lNYNVwKStgYwkndObp7_Zvs27tLrAIbopJbHCraZZZB3ApabsqyJR5Y8lj4LQ0LbNg',
+    img: '/Electric_extinction_can.jpg',
     description: 'Shock your system into the next era. Electric Extinction delivers a high-voltage sour lemon surge that cuts through mental fog like a lightning strike.',
     flavorNotes: ['Electric Lemon', 'Tart Citrus', 'Neon Sour'],
     benefits: [
@@ -53,7 +55,8 @@ export const products: Product[] = [
       { label: 'Total Sugar', value: '0g' },
       { label: 'Caffeine', value: '200mg' },
       { label: 'Sodium', value: '150mg' }
-    ]
+    ],
+    tags: ['Shock', 'Hydrate', 'Velocity']
   },
   {
     id: '03',
@@ -61,7 +64,7 @@ export const products: Product[] = [
     flavor: 'Wild Berry & Guarana',
     color: 'text-tertiary',
     accentColor: '#ff9f4a',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAy-3QEhbaxN_wGA7_z9A-qZOx3x7HkXsjUen3Nw_cdq-ng4ruN_EXOph6ksinV_2RRkwJAMTkRUWbu0h0SWzY6BmP0jLUuOBRoIyKR92p1MwBHlmxLg6BSdkaL4ZTovMPk0gnobnSTfzFxrtXOM69PzmIZ8NGCC9Smc2WNOwYsgnejUcRobGmamHg4eTqfyo-xsGCL5JhndtucZfn0WoSwE8uD4KJeWom1aNseeumNRGcAYLvT8155sdvWSV1nJRiVH0bbOFDaROU',
+    img: '/Prehistoric_punch_can.jpg',
     description: 'The primal choice for long-distance dominance. A complex blend of wild forest berries reinforced with natural Guarana for a sustained, hunter-gatherer endurance.',
     flavorNotes: ['Wild Blackberry', 'Forest Raspberry', 'Earthy Guarana'],
     benefits: [
@@ -74,7 +77,8 @@ export const products: Product[] = [
       { label: 'Total Sugar', value: '0g' },
       { label: 'Caffeine', value: '180mg' },
       { label: 'Guarana', value: '100mg' }
-    ]
+    ],
+    tags: ['Endure', 'Shield', 'Clarity']
   },
   {
     id: '04',
@@ -82,7 +86,7 @@ export const products: Product[] = [
     flavor: 'Blue Raspberry & Mint',
     color: 'text-blue-400',
     accentColor: '#60a5fa',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuASGcT8QnRGfP04zfobSxvbv75pmQ9d4mM2fpnkUTHQ-XRrhoyGbA89sOpqTlJ3zov7mV3EcLAZe6X1s1nmUlHmJ5XhgR6anzHMgZnvXztR5RW-30KsHq3Bc3Gc16XoLjFNv1XdqQefVNKjtAdcIaG-1px8Y_xImsa0CgMuagGsJxQldqZIFNjSfkZk-3nDD_Pa7A1cXUdSh-m8Nk2H7EBMttaSV-cz1W89zJ91MSVmQqKFuKkvg7phWldQvhOZ_N7xTOBv2FTmft8',
+    img: '/Arctic_annihilation_can.jpg',
     description: 'Sub-zero focus for the coldest competitors. Arctic Annihilation pairs a deep blue raspberry sweetness with a cooling menthol-like mint finish that keeps your head in the game.',
     flavorNotes: ['Frosty Blue Raspberry', 'Cooling Mint', 'Ice-Cold Finish'],
     benefits: [
@@ -95,7 +99,8 @@ export const products: Product[] = [
       { label: 'Total Sugar', value: '0g' },
       { label: 'Caffeine', value: '200mg' },
       { label: 'Potassium', value: '200mg' }
-    ]
+    ],
+    tags: ['Cryo', 'Refresh', 'Linear']
   },
   {
     id: '05',
@@ -103,7 +108,7 @@ export const products: Product[] = [
     flavor: 'Green Apple & Matcha',
     color: 'text-green-400',
     accentColor: '#4ade80',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC7r4LNd0l7h-NTYoiNZHtQqrirg8IKEowkoDZN-E0lsONzqkoawr81AbcPvMhnDXckEME6ucreVeZ39rcYhTRAJqDjp2XywN8126x6iqp_Y6HYDU_m3GzNqQwTlYOJWmsh0bpY28f5SZhHOVZtipqNWwMTU34QJrRXCvcg3jbesdXxcG8AbCkR7aYAbeUKFVS75HGEivIJ3lNYNVwKStgYwkndObp7_Zvs27tLrAIbopJbHCraZZZB3ApabsqyJR5Y8lj4LQ0LbNg',
+    img: '/Jungle_Jolt_can.jpg',
     description: 'Unleash the beast within the canopy. Jungle Jolt fuses the crisp, tart snap of green apples with the ceremonial-grade focus of Japanese Matcha.',
     flavorNotes: ['Crisp Green Apple', 'Earthy Matcha', 'Tart & Clean'],
     benefits: [
@@ -116,7 +121,8 @@ export const products: Product[] = [
       { label: 'Total Sugar', value: '0g' },
       { label: 'Caffeine', value: '190mg' },
       { label: 'Matcha', value: '250mg' }
-    ]
+    ],
+    tags: ['Zen', 'Surge', 'Clean']
   },
   {
     id: '06',
@@ -124,7 +130,7 @@ export const products: Product[] = [
     flavor: 'Grape & Dragonfruit',
     color: 'text-purple-400',
     accentColor: '#c084fc',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAy-3QEhbaxN_wGA7_z9A-qZOx3x7HkXsjUen3Nw_cdq-ng4ruN_EXOph6ksinV_2RRkwJAMTkRUWbu0h0SWzY6BmP0jLUuOBRoIyKR92p1MwBHlmxLg6BSdkaL4ZTovMPk0gnobnSTfzFxrtXOM69PzmIZ8NGCC9Smc2WNOwYsgnejUcRobGmamHg4eTqfyo-xsGCL5JhndtucZfn0WoSwE8uD4KJeWom1aNseeumNRGcAYLvT8155sdvWSV1nJRiVH0bbOFDaROU',
+    img: '/Neon_Nebula_can.jpg',
     description: 'A cosmic surge from the deep past. Neon Nebula blends the deep sweetness of concord grapes with the exotic, electrifying snap of dragonfruit.',
     flavorNotes: ['Concord Grape', 'Electric Dragonfruit', 'Cosmic Sweetness'],
     benefits: [
@@ -137,7 +143,8 @@ export const products: Product[] = [
       { label: 'Total Sugar', value: '0g' },
       { label: 'Caffeine', value: '200mg' },
       { label: 'Antioxidants', value: 'High' }
-    ]
+    ],
+    tags: ['Warp', 'Pulse', 'Orbit']
   },
   {
     id: '07',
@@ -145,7 +152,7 @@ export const products: Product[] = [
     flavor: 'Mocha & Salted Caramel',
     color: 'text-amber-600',
     accentColor: '#d97706',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuASGcT8QnRGfP04zfobSxvbv75pmQ9d4mM2fpnkUTHQ-XRrhoyGbA89sOpqTlJ3zov7mV3EcLAZe6X1s1nmUlHmJ5XhgR6anzHMgZnvXztR5RW-30KsHq3Bc3Gc16XoLjFNv1XdqQefVNKjtAdcIaG-1px8Y_xImsa0CgMuagGsJxQldqZIFNjSfkZk-3nDD_Pa7A1cXUdSh-m8Nk2H7EBMttaSV-cz1W89zJ91MSVmQqKFuKkvg7phWldQvhOZ_N7xTOBv2FTmft8',
+    img: '/Fossil_Fuel_can.jpg',
     description: 'The ultimate morning hunt companion. Fossil Fuel combines rich, dark roasted mocha with a decadent salted caramel finish for a heavy-hitting energy boost.',
     flavorNotes: ['Dark Roast Mocha', 'Salted Caramel', 'Velvety Finish'],
     benefits: [
@@ -158,7 +165,8 @@ export const products: Product[] = [
       { label: 'Total Sugar', value: '0g' },
       { label: 'Caffeine', value: '220mg' },
       { label: 'B-Vitamins', value: '200% DV' }
-    ]
+    ],
+    tags: ['Apex', 'Alert', 'Steady']
   },
   {
     id: '08',
@@ -166,7 +174,7 @@ export const products: Product[] = [
     flavor: 'Watermelon & Lime',
     color: 'text-pink-500',
     accentColor: '#ec4899',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC7r4LNd0l7h-NTYoiNZHtQqrirg8IKEowkoDZN-E0lsONzqkoawr81AbcPvMhnDXckEME6ucreVeZ39rcYhTRAJqDjp2XywN8126x6iqp_Y6HYDU_m3GzNqQwTlYOJWmsh0bpY28f5SZhHOVZtipqNWwMTU34QJrRXCvcg3jbesdXxcG8AbCkR7aYAbeUKFVS75HGEivIJ3lNYNVwKStgYwkndObp7_Zvs27tLrAIbopJbHCraZZZB3ApabsqyJR5Y8lj4LQ0LbNg',
+    img: '/Raptor_rush_can.jpg',
     description: 'High-speed hydration for the agile predator. Raptor Rush delivers a refreshing blast of sun-ripened watermelon with a sharp, predatory lime finish.',
     flavorNotes: ['Sun-Ripened Watermelon', 'Zesty Lime', 'Refreshing Snap'],
     benefits: [
@@ -179,7 +187,8 @@ export const products: Product[] = [
       { label: 'Total Sugar', value: '0g' },
       { label: 'Caffeine', value: '180mg' },
       { label: 'Electrolytes', value: '400mg' }
-    ]
+    ],
+    tags: ['Agile', 'Strike', 'Pure']
   },
   {
     id: '09',
@@ -188,7 +197,7 @@ export const products: Product[] = [
     type: 'powder',
     color: 'text-primary',
     accentColor: '#ff8f70',
-    img: 'https://images.unsplash.com/photo-1593095391039-65873995f71b?auto=format&fit=crop&q=80&w=1000',
+    img: '/volcanic_blood_tub.jpg',
     description: 'A seismic shift in energy, now in a customizable formula. Volcanic Blood combines the sharp, citrus bite of Mediterranean blood oranges with a slow-burn ginger finish that ignites your focus.',
     flavorNotes: ['Zesty Blood Orange', 'Spicy Ginger Root', 'Citrus Undertones'],
     benefits: [
@@ -201,7 +210,8 @@ export const products: Product[] = [
       { label: 'Total Sugar', value: '0g' },
       { label: 'Caffeine', value: '200mg' },
       { label: 'Servings', value: '30' }
-    ]
+    ],
+    tags: ['Mix', 'Ignite', 'Focus']
   },
   {
     id: '10',
@@ -210,7 +220,7 @@ export const products: Product[] = [
     type: 'powder',
     color: 'text-secondary',
     accentColor: '#ffd709',
-    img: 'https://images.unsplash.com/photo-1579722820308-d74e5719d36a?auto=format&fit=crop&q=80&w=1000',
+    img: '/electric_extinction_tub.jpg',
     description: 'Shock your system into the next era. Electric Extinction delivers a high-voltage sour lemon surge, now available in a 30-serving tub to let you control the voltage.',
     flavorNotes: ['Electric Lemon', 'Tart Citrus', 'Neon Sour'],
     benefits: [
@@ -223,6 +233,7 @@ export const products: Product[] = [
       { label: 'Total Sugar', value: '0g' },
       { label: 'Caffeine', value: '200mg' },
       { label: 'Servings', value: '30' }
-    ]
+    ],
+    tags: ['Mix', 'Shock', 'Hydrate']
   }
 ];

@@ -12,10 +12,15 @@ export interface Product {
   id: string;
   name: string;
   flavor: string;
+  type?: 'can' | 'powder';
   color: string;
-  image: string;
+  accentColor: string;
+  img: string;
   description: string;
-  benefits: string[];
+  flavorNotes: string[];
+  benefits: { title: string; description: string }[];
+  nutrition: { label: string; value: string }[];
+  tags: string[];
 }
 
 export interface TimelineEvent {

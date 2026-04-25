@@ -34,28 +34,52 @@ export const PRODUCTS: Product[] = [
     id: 'original',
     name: 'REX ORIGINAL',
     flavor: 'Classic Energy',
-    color: '#ff8f70',
-    image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&q=80&w=400',
+    color: 'text-primary',
+    accentColor: '#ff8f70',
+    img: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&q=80&w=400',
     description: 'The foundation of the predator. Pure, raw energy to fuel your ascent.',
-    benefits: ['Instant Focus', 'Sustained Power', 'Zero Crash'],
+    flavorNotes: ['Classic Energy', 'Raw Power'],
+    benefits: [
+      { title: 'Instant Focus', description: 'Immediate alertness' },
+      { title: 'Sustained Power', description: 'Energy throughout the day' },
+      { title: 'Zero Crash', description: 'Smooth energy curve' }
+    ],
+    nutrition: [],
+    tags: ['Energy', 'Focus', 'Power']
   },
   {
     id: 'citrus',
     name: 'CITRUS STRIKE',
     flavor: 'Zesty Lime & Lemon',
-    color: '#ffd709',
-    image: 'https://images.unsplash.com/photo-1543253687-c931c8e01820?auto=format&fit=crop&q=80&w=400',
+    color: 'text-secondary',
+    accentColor: '#ffd709',
+    img: 'https://images.unsplash.com/photo-1543253687-c931c8e01820?auto=format&fit=crop&q=80&w=400',
     description: 'A sharp, refreshing burst of citrus to awaken your senses.',
-    benefits: ['Electrolyte Balance', 'Rapid Hydration', 'Vitamin C Boost'],
+    flavorNotes: ['Zesty Lime', 'Tart Lemon'],
+    benefits: [
+      { title: 'Electrolyte Balance', description: 'Maintain hydration' },
+      { title: 'Rapid Hydration', description: 'Quick absorption' },
+      { title: 'Vitamin C Boost', description: 'Immune support' }
+    ],
+    nutrition: [],
+    tags: ['Hydrate', 'Refresh', 'Vitamin']
   },
   {
     id: 'berry',
     name: 'BERRY BARRAGE',
     flavor: 'Wild Forest Berries',
-    color: '#ff4a4a',
-    image: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&q=80&w=400',
+    color: 'text-tertiary',
+    accentColor: '#ff4a4a',
+    img: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&q=80&w=400',
     description: 'A powerful blend of dark berries for intense endurance.',
-    benefits: ['Antioxidant Rich', 'Endurance Support', 'Natural Flavors'],
+    flavorNotes: ['Wild Blackberry', 'Forest Raspberry'],
+    benefits: [
+      { title: 'Antioxidant Rich', description: 'Cellular protection' },
+      { title: 'Endurance Support', description: 'Keep going longer' },
+      { title: 'Natural Flavors', description: 'Pure berry extract' }
+    ],
+    nutrition: [],
+    tags: ['Endure', 'Berries', 'Pure']
   },
 ];
 

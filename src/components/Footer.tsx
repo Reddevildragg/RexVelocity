@@ -1,21 +1,22 @@
 import { Link } from 'react-router-dom';
-import { Share2, Heart } from 'lucide-react';
+import { Instagram, Twitter, Youtube, Facebook, Twitch } from 'lucide-react';
+import { Container } from './Container';
 
 export const Footer = () => {
+  const socials = [
+    { icon: <Instagram size={20} />, label: 'Instagram', color: 'hover:bg-[#E4405F]' },
+    { icon: <Twitter size={20} />, label: 'X (Twitter)', color: 'hover:bg-[#1DA1F2]' },
+    { icon: <Youtube size={20} />, label: 'YouTube', color: 'hover:bg-[#FF0000]' },
+    { icon: <Twitch size={20} />, label: 'Twitch', color: 'hover:bg-[#9146FF]' },
+    { icon: <Facebook size={20} />, label: 'Facebook', color: 'hover:bg-[#1877F2]' },
+  ];
+
   return (
     <footer className="w-full rounded-t-[3rem] mt-20 bg-neutral-950">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+      <Container className="grid grid-cols-1 md:grid-cols-4 gap-12 py-20">
         <div className="col-span-1 md:col-span-1">
           <div className="text-4xl font-black tracking-tighter text-orange-600 font-headline mb-6">REX VELOCITY</div>
           <p className="font-light text-neutral-400 font-body">UNLEASH THE PRIMAL SURGE. The ultimate bio-available performance fuel for those who refuse to be prey.</p>
-          <div className="flex gap-4 mt-8">
-            <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-orange-600 transition-colors cursor-pointer group">
-              <Share2 className="w-4 h-4 text-white" />
-            </div>
-            <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-orange-600 transition-colors cursor-pointer">
-              <Heart className="w-4 h-4 text-white" />
-            </div>
-          </div>
         </div>
         <div>
           <h5 className="text-white font-bold font-headline mb-6 uppercase tracking-wider">Navigation</h5>
@@ -36,19 +37,24 @@ export const Footer = () => {
           </ul>
         </div>
         <div>
-          <h5 className="text-white font-bold font-headline mb-6 uppercase tracking-wider">Social Feed</h5>
-          <div className="grid grid-cols-2 gap-2">
-            <div className="aspect-square bg-neutral-900 rounded-lg overflow-hidden">
-              <img className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Instagram style aesthetic product shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLEmsfUMhA7AMsCkb4Oiz4j9lPDcdhtl5TRf6EaB_8L3XH5tpIj6mXbFm05mmrTDmJLzTCfraYRdCMJzs0Dxl1hdqHFCimWz-uHc4MQ-E8K-rb0waJEj2BDdqO_X4cMkMHzYnKlVpySxLSppqdrNR7ipAumRHNdroWdFe36ESoU-bAfX1DDSPlRA6S9eBftBKrPmnTt9TACBty8zlLKrYJfwaTft2-BQ-YDktB_NA2TDx24YID7TfefU9Gm4u8AlB7xQuPp6gC0ko" referrerPolicy="no-referrer" />
-            </div>
-            <div className="aspect-square bg-neutral-900 rounded-lg overflow-hidden">
-              <img className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="High intensity workout photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ0VsdDB9HnNzjttmuHxtlbgF64JnP46n9kHyKiTZ4ESzVgfVMSSNZANAR0PuNKkLRKiY5wqpGNf38cr0tCTPW8-Lp2t4_DWMgQZ2URXX9gprN90rkrMl7mDbpTXorH1-4c_EAQaF4-JuCpFVqemmuj5etWmVoiKuN9mgCHTVqecBYlEzNsdYLlRlW7SxcEswDr3UNtPRv04zVjqlsKjPqIV-TR2RMU2iGgC58PW4tcwxnAMjyg06le7YNjGFvcH_yaDjUXEum7Mc" referrerPolicy="no-referrer" />
-            </div>
+          <h5 className="text-white font-bold font-headline mb-6 uppercase tracking-wider">Connect With Us</h5>
+          <div className="flex flex-wrap gap-3">
+            {socials.map((social, idx) => (
+              <a 
+                key={idx}
+                href="#"
+                className={`w-12 h-12 rounded-xl bg-neutral-900 flex items-center justify-center text-neutral-400 transition-all duration-300 ${social.color} hover:text-white hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20`}
+                aria-label={social.label}
+              >
+                {social.icon}
+              </a>
+            ))}
           </div>
+          <p className="mt-6 text-sm text-neutral-500 font-light">Join 500k+ predators in the pack.</p>
         </div>
-      </div>
+      </Container>
       <div className="border-t border-neutral-900 py-10 text-center">
-        <p className="text-neutral-500 font-light font-body text-sm">© 2024 REX VELOCITY. UNLEASH THE PRIMAL SURGE.</p>
+        <p className="text-neutral-500 font-light font-body text-sm">© 2026 REX VELOCITY. UNLEASH THE PRIMAL SURGE.</p>
       </div>
     </footer>
   );

@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle2, Plus, Minus, X, Zap, Droplets, Brain } from 'lucide-react';
+import { CheckCircle2, Plus, Minus, X, Zap, Droplets, Brain, Shield, Activity, Flame, Wind, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { products, Product } from '../data/products';
 import { useCart } from '../context/CartContext';
 import { cn } from '../lib/utils';
+import { Container } from '../components/Container';
 
 export const Shop = () => {
   const { addToCart } = useCart();
@@ -65,7 +66,8 @@ export const Shop = () => {
       description: 'Your custom selection of 12 cans.',
       flavorNotes: [],
       benefits: [],
-      nutrition: []
+      nutrition: [],
+      tags: ['Custom', 'Bundle', 'Varied']
     };
     
     addToCart(customBundle);
@@ -84,7 +86,8 @@ export const Shop = () => {
       description: bundle.description,
       flavorNotes: [],
       benefits: [],
-      nutrition: []
+      nutrition: [],
+      tags: ['Bundle', 'Value', 'Curated']
     };
     addToCart(bundleProduct);
   };
@@ -155,7 +158,7 @@ export const Shop = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-primary/10 to-transparent"></div>
         </div>
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <Container className="relative z-10 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -172,14 +175,14 @@ export const Shop = () => {
           >
             Deploy your fuel. From individual biological triggers to total pack dominance, we've engineered the perfect arsenal for every hunt.
           </motion.p>
-        </div>
+        </Container>
       </section>
 
       {/* Shop Content Wrapper - Controls sticky boundaries */}
       <div id="shop-content" className="relative">
         {/* Sub-navigation Tabs */}
         <section className="sticky top-[72px] z-40 bg-background/95 backdrop-blur-md border-y border-outline-variant/10 shadow-lg shadow-black/5">
-          <div className="container mx-auto px-6">
+          <Container>
             <div className="flex justify-center gap-8 md:gap-12 flex-wrap">
               <button
                 onClick={() => setActiveTab('cans')}
@@ -188,7 +191,7 @@ export const Shop = () => {
                   activeTab === 'cans' ? "text-primary" : "text-on-surface-variant hover:text-on-surface"
                 )}
               >
-                Individual Cans
+                Cans
                 {activeTab === 'cans' && (
                   <motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-1 bg-primary" />
                 )}
@@ -200,7 +203,7 @@ export const Shop = () => {
                   activeTab === 'powders' ? "text-primary" : "text-on-surface-variant hover:text-on-surface"
                 )}
               >
-                Drink Mixes
+                Tub
                 {activeTab === 'powders' && (
                   <motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-1 bg-primary" />
                 )}
@@ -212,17 +215,17 @@ export const Shop = () => {
                   activeTab === 'bundles' ? "text-primary" : "text-on-surface-variant hover:text-on-surface"
                 )}
               >
-                Bundles & Packs
+                Bundles
                 {activeTab === 'bundles' && (
                   <motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-1 bg-primary" />
                 )}
               </button>
             </div>
-          </div>
+          </Container>
         </section>
 
         {/* Content Area */}
-        <div className="container mx-auto px-6 py-16">
+        <Container className="py-16">
           <AnimatePresence mode="wait">
             {activeTab === 'cans' || activeTab === 'powders' ? (
               <motion.div
@@ -243,7 +246,10 @@ export const Shop = () => {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <div className="group relative bg-surface-container-low rounded-[2.5rem] p-8 border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 flex flex-col h-full overflow-hidden">
+                    <Link 
+                      to={`/product/${product.id}`}
+                      className="group relative bg-surface-container-low rounded-[2.5rem] p-8 border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 flex flex-col h-full overflow-hidden"
+                    >
                       <div 
                         className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"
                         style={{ backgroundColor: product.accentColor }}
@@ -251,51 +257,69 @@ export const Shop = () => {
                       <div className="absolute top-6 right-8">
                         <span className="text-4xl font-black font-headline opacity-5 italic">{product.id}</span>
                       </div>
-                      <div className="relative aspect-square mb-4 flex items-center justify-center">
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <img 
-                          src={product.img} 
-                          alt={product.name} 
-                          className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl relative z-10"
-                          referrerPolicy="no-referrer"
-                        />
+                      <div className="relative aspect-square mb-6 flex items-center justify-center">
+                        <motion.div 
+                          initial={{ rotateY: 15, rotateX: 5 }}
+                          whileHover={{ rotateY: 0, rotateX: 0, scale: 1.05 }}
+                          transition={{ duration: 0.6, ease: "easeOut" }}
+                          style={{ perspective: 1000 }}
+                          className="w-full h-full"
+                        >
+                          <img 
+                            src={product.img} 
+                            alt={product.name} 
+                            className="w-full h-full object-cover rounded-3xl shadow-2xl shadow-black/40 relative z-10"
+                            referrerPolicy="no-referrer"
+                          />
+                        </motion.div>
                       </div>
                       <div className="relative z-10 flex flex-col flex-1">
-                        <div className="min-h-[4rem] flex items-center mb-1">
-                          <h3 className="text-2xl font-black font-headline uppercase italic leading-tight line-clamp-2">{product.name}</h3>
+                        <div className="min-h-[4rem] flex items-center mb-2">
+                          <h3 className="text-2xl font-black font-headline uppercase italic leading-[1.1] py-1">{product.name}</h3>
                         </div>
-                        <p className={`text-sm font-bold uppercase tracking-widest mb-4 ${product.color}`}>{product.flavor}</p>
-                        <div className="grid grid-cols-3 gap-2 mb-4 border-y border-outline-variant/10 py-4">
-                          <div className="text-center">
-                            <Zap className="w-4 h-4 mx-auto mb-1 text-primary opacity-60" />
-                            <span className="text-[10px] font-bold uppercase tracking-tighter opacity-60">Energy</span>
-                          </div>
-                          <div className="text-center">
-                            <Droplets className="w-4 h-4 mx-auto mb-1 text-secondary opacity-60" />
-                            <span className="text-[10px] font-bold uppercase tracking-tighter opacity-60">Hydrate</span>
-                          </div>
-                          <div className="text-center">
-                            <Brain className="w-4 h-4 mx-auto mb-1 text-tertiary opacity-60" />
-                            <span className="text-[10px] font-bold uppercase tracking-tighter opacity-60">Focus</span>
-                          </div>
+                        <p className={`text-sm font-bold uppercase tracking-widest mb-4 ${product.color} min-h-[2.5rem] flex items-start`}>{product.flavor}</p>
+                        <div className="grid grid-cols-3 gap-2 mb-4 border-y border-outline-variant/10 py-4 text-center">
+                          {product.tags.map((tag, i) => {
+                            const getIcon = (tagName: string, index: number) => {
+                              const t = tagName.toLowerCase();
+                              if (t.includes('ignite') || t.includes('surge') || t.includes('shock') || t.includes('heat')) return Zap;
+                              if (t.includes('focus') || t.includes('clarity') || t.includes('alert') || t.includes('zen') || t.includes('cryo')) return Brain;
+                              if (t.includes('hydrate') || t.includes('refresh') || t.includes('pure') || t.includes('clean')) return Droplets;
+                              if (t.includes('shield') || t.includes('endure') || t.includes('steady')) return Shield;
+                              if (t.includes('warp') || t.includes('agile') || t.includes('strike')) return Wind;
+                              if (t.includes('pulse')) return Activity;
+                              const icons = [Zap, Brain, Droplets, Shield, Wind, Activity, Flame, Target];
+                              return icons[index % icons.length];
+                            };
+                            const Icon = getIcon(tag, i);
+                            return (
+                              <div key={i} className="text-center">
+                                <Icon className={`w-4 h-4 mx-auto mb-1 ${product.color} opacity-80`} />
+                                <span className="text-[10px] font-bold uppercase tracking-tighter opacity-60 leading-none block">{tag}</span>
+                              </div>
+                            );
+                          })}
                         </div>
                         <div className="mt-auto flex items-center gap-3">
-                          <Link 
-                            to={`/product/${product.id}`}
-                            className="flex-1 bg-on-surface text-background py-4 rounded-full font-bold text-center hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-black/20 uppercase tracking-widest text-sm"
+                          <div 
+                            className="flex-1 bg-on-surface text-background py-4 rounded-full font-bold text-center group-hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-black/20 uppercase tracking-widest text-sm"
                           >
                             View Details
-                          </Link>
+                          </div>
                           <button 
-                            onClick={() => addToCart(product)}
-                            className="w-14 h-14 bg-surface-container-highest text-on-surface rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all hover:scale-110 active:scale-90"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              addToCart(product);
+                            }}
+                            className="w-14 h-14 bg-surface-container-highest text-on-surface rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all hover:scale-110 active:scale-90 relative z-20"
                             title="Add to Cart"
                           >
                             <Plus className="w-6 h-6" />
                           </button>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   </motion.div>
                 ))}
               </motion.div>
@@ -351,12 +375,12 @@ export const Shop = () => {
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
+        </Container>
       </div>
 
       {/* Performance Matrix */}
       <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
+        <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -393,16 +417,16 @@ export const Shop = () => {
             >
               <div className="aspect-square bg-surface-container-highest rounded-full flex items-center justify-center p-12 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 animate-pulse"></div>
-                <img alt="3D render of a futuristic energy drink can with glowing elements" className="relative z-10 w-full h-full object-contain drop-shadow-[0_0_50px_rgba(255,143,112,0.4)] animate-float" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATMMM8SoRltbc0tHnNFEXlgxLTpzea0Qfwj-tkPqUE8BVQTNqdxTuKijQmx-99igrZQDsopmOx5YbGvjO_DAw-IAQzNxvJViVdNQbwZtGxeJ9lm-AkaClvxLojuizGLiZOmDbTpKbP7Zkj4GPcAllcIH_XflOHLwfj3YrXg-XpcbXEmAk2EATqXBVoqtnQ_oVs_PCppfqM7qHN5yKT9Na9D-eKadYvM96HzNR-u5SnIJACClPd9Dp6tYYl7lGW2LE1UgrXP-HdUaA" referrerPolicy="no-referrer" />
+                <img alt="Volcanic Blood energy drink can" className="relative z-10 w-full h-full object-contain drop-shadow-[0_0_50px_rgba(255,143,112,0.4)] animate-float scale-150" src="/Volcanic_blood_can.jpg" referrerPolicy="no-referrer" />
               </div>
             </motion.div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Newsletter Section */}
       <section className="py-24 bg-surface-container-high">
-        <div className="container mx-auto px-6 text-center">
+        <Container className="text-center">
           <h2 className="text-4xl md:text-6xl font-black font-headline italic uppercase mb-8">Never Miss a <span className="text-primary">Drop</span></h2>
           <p className="text-on-surface-variant max-w-xl mx-auto mb-12">Join the inner circle for exclusive flavor releases, limited edition gear, and early access to the next evolution of energy.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
@@ -415,7 +439,7 @@ export const Shop = () => {
               JOIN
             </button>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Build Your Own Modal */}

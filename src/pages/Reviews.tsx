@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { Star, User, Quote, Instagram, Twitter, MessageSquare, Award } from 'lucide-react';
+import { Star, User, Quote, Instagram, Twitter, MessageSquare } from 'lucide-react';
+import { Container } from '../components/Container';
 
 export const Reviews = () => {
   const reviews = [
@@ -36,7 +37,7 @@ export const Reviews = () => {
             referrerPolicy="no-referrer" 
           />
         </div>
-        <div className="container mx-auto px-6 relative z-10">
+        <Container className="relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 items-center text-center lg:text-left">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
@@ -72,12 +73,12 @@ export const Reviews = () => {
               ))}
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Reviews Grid Section */}
       <section className="py-24 md:py-32">
-        <div className="container mx-auto px-6">
+        <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {reviews.map((review, i) => (
               <motion.div 
@@ -113,30 +114,30 @@ export const Reviews = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Join the Pack Section (Expanded) */}
+      {/* Leave a Review Section */}
       <section className="py-32 bg-surface-container-lowest relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 -skew-y-3 origin-left"></div>
-        <div className="container mx-auto px-6 relative z-10">
+        <Container className="relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
             <div className="lg:w-1/2">
               <h2 className="text-4xl md:text-7xl font-black font-headline mb-8 uppercase italic leading-[0.9] tracking-tighter">
-                Lead the<br /><span className="text-primary font-black">Velocity</span>
+                Share your<br /><span className="text-primary font-black">Velocity</span>
               </h2>
               <p className="text-xl text-on-surface-variant font-light leading-relaxed mb-10">
-                Biological enhancement is better shared. Join our community of elite performers and access exclusive seasonal drops, limited edition equipment, and territory-specific surges.
+                How has Rex Velocity redefined your biological limit? Your telemetry helps other predators find their fuel. Submit your mission report below.
               </p>
               
               <div className="flex flex-wrap gap-8">
                 <div>
-                  <span className="block text-4xl font-black font-headline text-on-surface">50k+</span>
-                  <span className="text-xs font-black uppercase tracking-widest text-secondary">Biological Units</span>
+                  <span className="block text-4xl font-black font-headline text-on-surface">15k+</span>
+                  <span className="text-xs font-black uppercase tracking-widest text-secondary">Reviewed Missions</span>
                 </div>
                 <div>
-                  <span className="block text-4xl font-black font-headline text-on-surface">120+</span>
-                  <span className="text-xs font-black uppercase tracking-widest text-secondary">Apex Partners</span>
+                  <span className="block text-4xl font-black font-headline text-on-surface">4.9</span>
+                  <span className="text-xs font-black uppercase tracking-widest text-secondary">Peak Rating</span>
                 </div>
               </div>
             </div>
@@ -149,32 +150,52 @@ export const Reviews = () => {
             >
               <div className="bg-surface-container-high p-10 md:p-14 rounded-[3.5rem] border border-primary/20 shadow-3xl shadow-primary/5">
                 <div className="text-center mb-10">
-                  <h3 className="text-2xl md:text-3xl font-black font-headline uppercase italic leading-none mb-3 italic">Join the Pack</h3>
-                  <p className="text-on-surface-variant text-sm font-light">Enter your coordinates to receive early access protocols.</p>
+                  <h3 className="text-2xl md:text-3xl font-black font-headline uppercase italic leading-none mb-3 italic">Submit Report</h3>
+                  <p className="text-on-surface-variant text-sm font-light">Document your surge. Help the pack evolve.</p>
                 </div>
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-secondary ml-4">Full Identity</label>
-                      <input type="text" className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-2xl py-4 px-6 focus:outline-none focus:border-primary transition-colors text-base" />
+                      <input type="text" placeholder="e.g. Alex Rivera" className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-2xl py-4 px-6 focus:outline-none focus:border-primary transition-colors text-base" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-secondary ml-4">Communication Node</label>
-                      <input type="email" className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-2xl py-4 px-6 focus:outline-none focus:border-primary transition-colors text-base" />
+                      <label className="text-[10px] font-black uppercase tracking-widest text-secondary ml-4">Primary Role</label>
+                      <input type="text" placeholder="e.g. Endurance Athlete" className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-2xl py-4 px-6 focus:outline-none focus:border-primary transition-colors text-base" />
                     </div>
                   </div>
+                  
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-secondary ml-4">Mission Statement / Why Rex Velocity?</label>
-                    <textarea rows={4} className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-3xl py-4 px-6 focus:outline-none focus:border-primary transition-colors resize-none text-base"></textarea>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-secondary ml-4">Intensity Rating</label>
+                    <div className="flex gap-4 px-4">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <button key={star} type="button" className="text-secondary hover:scale-125 transition-transform">
+                          <Star className={`w-8 h-8 ${star <= 5 ? 'fill-current' : 'opacity-20'}`} />
+                        </button>
+                      ))}
+                    </div>
                   </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-secondary ml-4">Mission Report (Your Review)</label>
+                    <textarea rows={4} placeholder="Describe the surge..." className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-3xl py-4 px-6 focus:outline-none focus:border-primary transition-colors resize-none text-base"></textarea>
+                  </div>
+
+                  <div className="flex items-center gap-3 px-4">
+                    <label className="flex items-center gap-3 cursor-pointer group">
+                      <input type="checkbox" className="w-5 h-5 rounded border-outline-variant/20 bg-surface-container-lowest text-primary focus:ring-primary focus:ring-offset-background" />
+                      <span className="text-xs text-on-surface-variant font-medium group-hover:text-on-surface transition-colors">Subscribe to the Apex Newsletter for fresh drops & protocols</span>
+                    </label>
+                  </div>
+
                   <button type="submit" className="w-full kinetic-gradient text-on-primary-fixed py-5 rounded-full font-black font-headline uppercase italic tracking-widest text-xl hover:scale-[1.03] active:scale-95 transition-all shadow-xl shadow-primary/30">
-                    Authorize Entry
+                    Deploy Review
                   </button>
                 </form>
               </div>
             </motion.div>
           </div>
-        </div>
+        </Container>
       </section>
     </motion.div>
   );
