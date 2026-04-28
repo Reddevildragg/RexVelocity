@@ -13,27 +13,25 @@ export const Footer = () => {
 
   return (
     <footer className="w-full rounded-t-[3rem] mt-20 bg-neutral-950">
-      <Container className="grid grid-cols-1 md:grid-cols-4 gap-12 py-20">
+      <Container className="grid grid-cols-1 md:grid-cols-4 gap-12 py-12 md:py-16">
         <div className="col-span-1 md:col-span-1">
-          <div className="text-4xl font-black tracking-tighter text-orange-600 font-headline mb-6">REX VELOCITY</div>
+          <div className="text-4xl font-black tracking-tighter text-primary font-headline mb-6">REX VELOCITY</div>
           <p className="font-light text-neutral-400 font-body">UNLEASH THE PRIMAL SURGE. The ultimate bio-available performance fuel for those who refuse to be prey.</p>
         </div>
         <div>
           <h5 className="text-white font-bold font-headline mb-6 uppercase tracking-wider">Navigation</h5>
           <ul className="space-y-4">
-            <li><Link className="text-neutral-500 hover:text-orange-400 font-body hover:translate-x-1 transition-transform duration-200 block" to="/formula">The Formula</Link></li>
-            <li><Link className="text-neutral-500 hover:text-orange-400 font-body hover:translate-x-1 transition-transform duration-200 block" to="/shop">Individual Cans</Link></li>
-            <li><Link className="text-neutral-500 hover:text-orange-400 font-body hover:translate-x-1 transition-transform duration-200 block" to="/reviews">Reviews</Link></li>
-            <li><Link className="text-neutral-500 hover:text-orange-400 font-body hover:translate-x-1 transition-transform duration-200 block" to="/shop">Bundles</Link></li>
+            <li><Link className="text-neutral-500 hover:text-primary font-body hover:translate-x-1 transition-transform duration-200 block" to="/formula">The Formula</Link></li>
+            <li><Link className="text-neutral-500 hover:text-primary font-body hover:translate-x-1 transition-transform duration-200 block" to="/shop">Shop All</Link></li>
+            <li><Link className="text-neutral-500 hover:text-primary font-body hover:translate-x-1 transition-transform duration-200 block" to="/reviews">Reviews</Link></li>
+            <li><Link className="text-neutral-500 hover:text-primary font-body hover:translate-x-1 transition-transform duration-200 block" to="/locations">Find Store</Link></li>
           </ul>
         </div>
         <div>
           <h5 className="text-white font-bold font-headline mb-6 uppercase tracking-wider">Support</h5>
           <ul className="space-y-4">
-            <li><a className="text-neutral-500 hover:text-orange-400 font-body hover:translate-x-1 transition-transform duration-200 block" href="#">Privacy Policy</a></li>
-            <li><a className="text-neutral-500 hover:text-orange-400 font-body hover:translate-x-1 transition-transform duration-200 block" href="#">Terms of Service</a></li>
-            <li><Link className="text-neutral-500 hover:text-orange-400 font-body hover:translate-x-1 transition-transform duration-200 block" to="/reviews">Wholesale</Link></li>
-            <li><a className="text-neutral-500 hover:text-orange-400 font-body hover:translate-x-1 transition-transform duration-200 block" href="#">Contact</a></li>
+            <li><Link className="text-neutral-500 hover:text-primary font-body hover:translate-x-1 transition-transform duration-200 block" to="/privacy">Privacy Policy</Link></li>
+            <li><Link className="text-neutral-500 hover:text-primary font-body hover:translate-x-1 transition-transform duration-200 block" to="/contact">Contact HQ</Link></li>
           </ul>
         </div>
         <div>
@@ -53,7 +51,7 @@ export const Footer = () => {
           <p className="mt-6 text-sm text-neutral-500 font-light">Join 500k+ predators in the pack.</p>
         </div>
       </Container>
-      <div className="border-t border-neutral-900 py-10 text-center">
+      <div className="border-t border-neutral-900 py-6 text-center">
         <p className="text-neutral-500 font-light font-body text-sm">© 2026 REX VELOCITY. UNLEASH THE PRIMAL SURGE.</p>
       </div>
     </footer>

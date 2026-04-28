@@ -14,6 +14,8 @@ import { Locations } from './pages/Locations';
 import { ProductDetail } from './pages/ProductDetail';
 import { Shop } from './pages/Shop';
 import { Cart } from './pages/Cart';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { Contact } from './pages/Contact';
 import { CartProvider } from './context/CartContext';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { useEffect } from 'react';
@@ -38,6 +40,8 @@ const AnimatedRoutes = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/locations" element={<Locations />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
       </div>

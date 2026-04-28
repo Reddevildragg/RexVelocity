@@ -27,7 +27,7 @@ export const ScienceSection = () => {
   ];
 
   return (
-    <section id="science" className="py-24 px-6 bg-brand-bg relative overflow-hidden">
+    <section id="science" className="py-16 px-6 bg-brand-bg relative overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }} />

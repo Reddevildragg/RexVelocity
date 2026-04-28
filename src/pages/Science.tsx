@@ -55,13 +55,18 @@ export const Science = () => {
             whileHover={{ rotateY: 0, rotateX: 0, scale: 1.05 }}
             transition={{ duration: 1 }}
             style={{ perspective: 1000 }}
-            className="relative cursor-pointer"
+            className="relative cursor-pointer mt-12 lg:mt-0 px-8 sm:px-12 lg:px-0"
           >
-            <div className="relative z-10">
-              <img alt="Volcanic Blood energy drink can" className="rounded-[3rem] shadow-3xl shadow-primary/30 max-w-md mx-auto scale-150" src="/Volcanic_blood_can.jpg" referrerPolicy="no-referrer" />
+            <div className="relative z-10 max-w-sm mx-auto lg:max-w-md">
+              <img 
+                alt="Volcanic Blood energy drink can" 
+                className="rounded-[3rem] shadow-3xl shadow-primary/30 w-full h-auto drop-shadow-[0_0_50px_rgba(255,143,112,0.3)]" 
+                src="/Volcanic_blood_can.jpg" 
+                referrerPolicy="no-referrer" 
+              />
             </div>
-            <div className="absolute -bottom-20 -right-20 z-20 w-80 h-80 opacity-90 hidden lg:block">
-              <PawPrint className="w-[240px] h-[240px] text-secondary rotate-12 animate-pulse fill-current" />
+            <div className="absolute -bottom-10 -right-10 lg:-bottom-20 lg:-right-20 z-20 w-40 h-40 lg:w-80 lg:h-80 opacity-60 lg:opacity-90">
+              <PawPrint className="w-full h-full text-secondary rotate-12 animate-pulse fill-current p-4 lg:p-8" />
             </div>
           </motion.div>
         </Container>
@@ -176,7 +181,7 @@ export const Science = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-32 overflow-hidden bg-background">
+      <section className="py-20 overflow-hidden bg-background">
         <Container>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -340,7 +345,7 @@ export const Science = () => {
       </section>
 
       {/* The Arsenal Section */}
-      <section className="py-32 bg-background overflow-hidden border-t border-outline-variant/10">
+      <section className="py-20 bg-background overflow-hidden border-t border-outline-variant/10">
         <Container>
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-7xl font-black font-headline uppercase italic leading-none mb-6">THE <span className="text-primary">ARSENAL</span></h2>

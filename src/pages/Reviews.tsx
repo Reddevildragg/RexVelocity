@@ -77,7 +77,7 @@ export const Reviews = () => {
       </section>
 
       {/* Reviews Grid Section */}
-      <section className="py-24 md:py-32">
+      <section className="py-16 md:py-20">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {reviews.map((review, i) => (
@@ -118,7 +118,7 @@ export const Reviews = () => {
       </section>
 
       {/* Leave a Review Section */}
-      <section className="py-32 bg-surface-container-lowest relative overflow-hidden">
+      <section className="py-20 bg-surface-container-lowest relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 -skew-y-3 origin-left"></div>
         <Container className="relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">

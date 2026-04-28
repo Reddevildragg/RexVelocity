@@ -4,7 +4,7 @@ import { STORES } from '../constants';
 
 export const StoreLocator = () => {
   return (
-    <section id="locator" className="py-24 px-6 bg-brand-surface/30">
+    <section id="locator" className="py-16 px-6 bg-brand-surface/30">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
           <div>

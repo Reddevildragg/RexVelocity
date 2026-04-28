@@ -38,7 +38,7 @@ export const Navbar = () => {
       isScrolled ? "bg-neutral-950/80 backdrop-blur-xl shadow-2xl shadow-orange-950/20" : "bg-neutral-950/60 backdrop-blur-xl"
       )}>
         <Container className="flex justify-between items-center py-4">
-          <Link to="/" className="text-xl md:text-2xl font-black italic tracking-tighter text-orange-600 dark:text-orange-500 font-headline">
+          <Link to="/" className="text-xl md:text-2xl font-black italic tracking-tighter text-primary font-headline">
             REX VELOCITY
           </Link>
           
@@ -56,8 +56,8 @@ export const Navbar = () => {
                   className={cn(
                     "font-label transition-all duration-300 hover:scale-105",
                     location.pathname === link.href 
-                      ? "text-orange-500 font-bold border-b-2 border-orange-500 pb-1" 
-                      : "text-neutral-400 font-medium hover:text-orange-300"
+                      ? "text-primary font-bold border-b-2 border-primary pb-1" 
+                      : "text-neutral-400 font-medium hover:text-primary/70"
                   )}
                 >
                   {link.name}
@@ -69,7 +69,7 @@ export const Navbar = () => {
           <div className="flex items-center gap-4">
             <Link 
               to="/cart"
-              className="relative p-2 text-white hover:text-orange-500 transition-colors"
+              className="relative p-2 text-white hover:text-primary transition-colors"
             >
               <ShoppingCart className="w-6 h-6" />
               {totalItems > 0 && (
@@ -105,7 +105,7 @@ export const Navbar = () => {
                   to={link.href}
                   className={cn(
                     "text-xl font-headline tracking-tight",
-                    location.pathname === link.href ? "text-orange-500" : "text-neutral-300"
+                    location.pathname === link.href ? "text-primary transition-colors" : "text-neutral-300"
                   )}
                 >
                   {link.name}

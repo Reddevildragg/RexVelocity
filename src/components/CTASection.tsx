@@ -3,7 +3,7 @@ import { Zap } from 'lucide-react';
 
 export const CTASection = () => {
   return (
-    <section className="py-32 px-6 relative overflow-hidden">
+    <section className="py-20 px-6 relative overflow-hidden">
       <div className="absolute inset-0 bg-brand-primary/10 blur-[150px] rounded-full scale-150" />
       
       <div className="max-w-5xl mx-auto text-center relative z-10">

@@ -12,7 +12,7 @@ export const ProductArsenal = () => {
   const activeProduct = PRODUCTS[activeIndex];
 
   return (
-    <section id="arsenal" className="py-24 px-6 overflow-hidden">
+    <section id="arsenal" className="py-16 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-6xl md:text-8xl mb-6">THE <span className="text-brand-primary">ARSENAL</span></h2>

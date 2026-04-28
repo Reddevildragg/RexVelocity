@@ -217,7 +217,7 @@ export const ProductDetail = () => {
 
       {/* Preparation Section (Only for Powders) */}
       {product.type === 'powder' && (
-        <section className="py-32">
+        <section className="py-20">
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div className="order-2 lg:order-1">
@@ -386,7 +386,7 @@ export const ProductDetail = () => {
       </section>
 
       {/* Next Product CTA */}
-      <section className="py-32 border-t border-outline-variant/10">
+      <section className="py-20 border-t border-outline-variant/10">
         <Container>
           <div className="text-center mb-16">
             <span className="font-label uppercase tracking-[0.3em] text-xs text-on-surface-variant mb-6 block">Continue the Hunt</span>

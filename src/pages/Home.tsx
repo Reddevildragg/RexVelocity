@@ -61,11 +61,11 @@ export const Home = () => {
             initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
             animate={{ opacity: 1, scale: 1, rotate: 3 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative order-1 lg:order-2 flex justify-center"
+            className="relative order-1 lg:order-2 flex justify-center px-6 sm:px-12 lg:px-0 mb-8 lg:mb-0"
           >
-            <div className="absolute -inset-10 bg-primary/20 blur-[100px] rounded-full animate-pulse"></div>
+            <div className="absolute -inset-4 sm:-inset-10 bg-primary/20 blur-[60px] sm:blur-[100px] rounded-full animate-pulse"></div>
             <img 
-              className="w-full max-w-2xl transform hover:rotate-0 transition-transform duration-700 drop-shadow-[0_35px_35px_rgba(255,93,46,0.5)] z-20 animate-float" 
+              className="w-full max-w-sm sm:max-w-md lg:max-w-2xl transform hover:rotate-0 transition-transform duration-700 drop-shadow-[0_20px_20px_rgba(255,93,46,0.3)] lg:drop-shadow-[0_35px_35px_rgba(255,93,46,0.5)] z-20 animate-float" 
               alt="3D render of a fierce metallic T-Rex breaking through orange energy" 
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWmus1f3hN6LCAqjQjkGad7EM_gGKm6B75Wp6GWzc3KELso5CU3s9FrjZWeDmslXeVMYVEoa4d3C_u7FV3nkvpjtWcIomUbUvMi8OduyrkOQAxVKhrOqf1wWvhVUKrt5Y3UNsYWhNKr5hRQsudoQL-heOlJdyBxn7muY9XghJHLxW1kz_Oqa7xnDcWcd_XsGPExMl0ySbNyNpmBnGzBOHQgwdpcUkZUthIEwEXe4rzMN7-BACGaNTiWa2-iPWk4B4loTr69kgtLZ4"
               referrerPolicy="no-referrer"
@@ -75,7 +75,7 @@ export const Home = () => {
       </header>
 
       {/* Product Showcase */}
-      <section className="py-32 bg-surface-container-low overflow-hidden">
+      <section className="py-20 bg-surface-container-low overflow-hidden">
         <Container>
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -197,7 +197,7 @@ export const Home = () => {
       </section>
 
       {/* Why Rex? Section */}
-      <section className="py-40 relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden">
         <Container className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
