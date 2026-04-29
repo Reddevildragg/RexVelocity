@@ -61,7 +61,7 @@ export const Science = () => {
               <img 
                 alt="Volcanic Blood energy drink can" 
                 className="rounded-[3rem] shadow-3xl shadow-primary/30 w-full h-auto drop-shadow-[0_0_50px_rgba(255,143,112,0.3)]" 
-                src="/Volcanic_blood_can.jpg" 
+                src="/Volcanic_blood_can.webp" 
                 referrerPolicy="no-referrer" 
               />
             </div>

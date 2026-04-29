@@ -20,7 +20,7 @@ export const products: Product[] = [
     flavor: 'Blood Orange & Ginger',
     color: 'text-primary',
     accentColor: '#ff8f70',
-    img: '/Volcanic_blood_can.jpg',
+    img: '/Volcanic_blood_can.webp',
     description: 'A seismic shift in energy. Volcanic Blood combines the sharp, citrus bite of Mediterranean blood oranges with a slow-burn ginger finish that ignites your focus.',
     flavorNotes: ['Zesty Blood Orange', 'Spicy Ginger Root', 'Citrus Undertones'],
     benefits: [
@@ -42,7 +42,7 @@ export const products: Product[] = [
     flavor: 'Sour Lemon & Caffeine',
     color: 'text-secondary',
     accentColor: '#ffd709',
-    img: '/Electric_extinction_can.jpg',
+    img: '/Electric_extinction_can.webp',
     description: 'Shock your system into the next era. Electric Extinction delivers a high-voltage sour lemon surge that cuts through mental fog like a lightning strike.',
     flavorNotes: ['Electric Lemon', 'Tart Citrus', 'Neon Sour'],
     benefits: [
@@ -64,7 +64,7 @@ export const products: Product[] = [
     flavor: 'Wild Berry & Guarana',
     color: 'text-tertiary',
     accentColor: '#ff9f4a',
-    img: '/Prehistoric_punch_can.jpg',
+    img: '/Prehistoric_punch_can.webp',
     description: 'The primal choice for long-distance dominance. A complex blend of wild forest berries reinforced with natural Guarana for a sustained, hunter-gatherer endurance.',
     flavorNotes: ['Wild Blackberry', 'Forest Raspberry', 'Earthy Guarana'],
     benefits: [
@@ -86,7 +86,7 @@ export const products: Product[] = [
     flavor: 'Blue Raspberry & Mint',
     color: 'text-blue-400',
     accentColor: '#60a5fa',
-    img: '/Arctic_annihilation_can.jpg',
+    img: '/Arctic_annihilation_can.webp',
     description: 'Sub-zero focus for the coldest competitors. Arctic Annihilation pairs a deep blue raspberry sweetness with a cooling menthol-like mint finish that keeps your head in the game.',
     flavorNotes: ['Frosty Blue Raspberry', 'Cooling Mint', 'Ice-Cold Finish'],
     benefits: [
@@ -108,7 +108,7 @@ export const products: Product[] = [
     flavor: 'Green Apple & Matcha',
     color: 'text-green-400',
     accentColor: '#4ade80',
-    img: '/Jungle_Jolt_can.jpg',
+    img: '/Jungle_Jolt_can.webp',
     description: 'Unleash the beast within the canopy. Jungle Jolt fuses the crisp, tart snap of green apples with the ceremonial-grade focus of Japanese Matcha.',
     flavorNotes: ['Crisp Green Apple', 'Earthy Matcha', 'Tart & Clean'],
     benefits: [
@@ -130,7 +130,7 @@ export const products: Product[] = [
     flavor: 'Grape & Dragonfruit',
     color: 'text-purple-400',
     accentColor: '#c084fc',
-    img: '/Neon_Nebula_can.jpg',
+    img: '/Neon_Nebula_can.webp',
     description: 'A cosmic surge from the deep past. Neon Nebula blends the deep sweetness of concord grapes with the exotic, electrifying snap of dragonfruit.',
     flavorNotes: ['Concord Grape', 'Electric Dragonfruit', 'Cosmic Sweetness'],
     benefits: [
@@ -152,7 +152,7 @@ export const products: Product[] = [
     flavor: 'Mocha & Salted Caramel',
     color: 'text-amber-600',
     accentColor: '#d97706',
-    img: '/Fossil_Fuel_can.jpg',
+    img: '/Fossil_Fuel_can.webp',
     description: 'The ultimate morning hunt companion. Fossil Fuel combines rich, dark roasted mocha with a decadent salted caramel finish for a heavy-hitting energy boost.',
     flavorNotes: ['Dark Roast Mocha', 'Salted Caramel', 'Velvety Finish'],
     benefits: [
@@ -174,7 +174,7 @@ export const products: Product[] = [
     flavor: 'Watermelon & Lime',
     color: 'text-pink-500',
     accentColor: '#ec4899',
-    img: '/Raptor_rush_can.jpg',
+    img: '/Raptor_rush_can.webp',
     description: 'High-speed hydration for the agile predator. Raptor Rush delivers a refreshing blast of sun-ripened watermelon with a sharp, predatory lime finish.',
     flavorNotes: ['Sun-Ripened Watermelon', 'Zesty Lime', 'Refreshing Snap'],
     benefits: [
@@ -197,7 +197,7 @@ export const products: Product[] = [
     type: 'powder',
     color: 'text-primary',
     accentColor: '#ff8f70',
-    img: '/volcanic_blood_tub.jpg',
+    img: '/volcanic_blood_tub.webp',
     description: 'A seismic shift in energy, now in a customizable formula. Volcanic Blood combines the sharp, citrus bite of Mediterranean blood oranges with a slow-burn ginger finish that ignites your focus.',
     flavorNotes: ['Zesty Blood Orange', 'Spicy Ginger Root', 'Citrus Undertones'],
     benefits: [
@@ -220,7 +220,7 @@ export const products: Product[] = [
     type: 'powder',
     color: 'text-secondary',
     accentColor: '#ffd709',
-    img: '/electric_extinction_tub.jpg',
+    img: '/electric_extinction_tub.webp',
     description: 'Shock your system into the next era. Electric Extinction delivers a high-voltage sour lemon surge, now available in a 30-serving tub to let you control the voltage.',
     flavorNotes: ['Electric Lemon', 'Tart Citrus', 'Neon Sour'],
     benefits: [

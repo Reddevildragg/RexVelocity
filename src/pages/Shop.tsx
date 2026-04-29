@@ -417,7 +417,7 @@ export const Shop = () => {
             >
               <div className="aspect-square bg-surface-container-highest rounded-full flex items-center justify-center p-12 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 animate-pulse"></div>
-                <img alt="Volcanic Blood energy drink can" className="relative z-10 w-full h-full object-contain drop-shadow-[0_0_50px_rgba(255,143,112,0.4)] animate-float scale-150" src="/Volcanic_blood_can.jpg" referrerPolicy="no-referrer" />
+                <img alt="Volcanic Blood energy drink can" className="relative z-10 w-full h-full object-contain drop-shadow-[0_0_50px_rgba(255,143,112,0.4)] animate-float scale-150" src="/Volcanic_blood_can.webp" referrerPolicy="no-referrer" />
               </div>
             </motion.div>
           </div>
