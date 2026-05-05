@@ -70,8 +70,11 @@ const initCookieConsent = () => {
     onConsent: () => {
       if (CookieConsent.acceptedCategory('analytics')) {
         const gaMeasurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
-        if (gaMeasurementId && !ReactGA.isInitialized) {
-          ReactGA.initialize(gaMeasurementId);
+        if (gaMeasurementId) {
+          if (!ReactGA.isInitialized) {
+            ReactGA.initialize(gaMeasurementId);
+          }
+          ReactGA.send({ hitType: 'pageview', page: window.location.pathname });
         }
       }
     },
@@ -79,8 +82,10 @@ const initCookieConsent = () => {
       if (changedCategories.includes('analytics')) {
         if (CookieConsent.acceptedCategory('analytics')) {
           const gaMeasurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
-          if (gaMeasurementId && !ReactGA.isInitialized) {
-            ReactGA.initialize(gaMeasurementId);
+          if (gaMeasurementId) {
+            if (!ReactGA.isInitialized) {
+               ReactGA.initialize(gaMeasurementId);
+            }
             ReactGA.send({ hitType: 'pageview', page: window.location.pathname });
           }
         }
