@@ -19,6 +19,8 @@ import { Contact } from './pages/Contact';
 import { CartProvider } from './context/CartContext';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { useEffect } from 'react';
+import { CookieConsentComponent } from './components/CookieConsent';
+import { useAnalytics } from './hooks/useAnalytics';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -30,6 +32,7 @@ const ScrollToTop = () => {
 
 const AnimatedRoutes = () => {
   const location = useLocation();
+  useAnalytics();
   return (
     <AnimatePresence mode="wait">
       <div key={location.pathname}>
@@ -61,6 +64,7 @@ export default function App() {
     <Router>
       <CartProvider>
         <ScrollToTop />
+        <CookieConsentComponent />
         <div className="relative min-h-screen bg-brand-bg selection:bg-brand-primary selection:text-black">
           {/* Progress Bar */}
           <motion.div
